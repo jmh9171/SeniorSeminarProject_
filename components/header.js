@@ -10,27 +10,27 @@ const Header = () => (
         </Link>
       </li>
       <li className={Styles.header1}>
-        <Link href="/about">
+        <Link href="/feed">
           <a>Feed</a>
         </Link>
       </li>
       <li className={Styles.header1}>
-        <Link href="/post/[...slug]" as="/post/2020/first-post/with/catch/all/routes">
+        <Link href="/settings" as="/post/2020/first-post/with/catch/all/routes">
           <a>Settings</a>
         </Link>
       </li>
       <li className={Styles.header1}>
-        <Link href="/post/[...slug]" as="/post/2020/second-post/with/catch/all/routes">
+        <Link href="profile" as="/post/2020/second-post/with/catch/all/routes">
           <a>Profile</a>
         </Link>
       </li>
       <li className={Styles.header1}>
-        <Link href="/post/[...slug]" as="/post/2020/second-post/with/catch/all/routes">
+        <Link href="/groups" as="/post/2020/second-post/with/catch/all/routes">
           <a>My Groups</a>
         </Link>
       </li>
       <li className={Styles.header1}>
-        <Link href="/post/[...slug]" as="/post/2020/second-post/with/catch/all/routes">
+        <Link href="/about" >
           <a>About</a>
         </Link>
       </li>

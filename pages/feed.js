@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Header from '../components/header'
 
-export default function hello() {
+export default function about() {
 return(
     <div>
     <Head>
@@ -10,7 +10,7 @@ return(
     </Head>
     <Header/>
     <h1>
-        This is the Login Page
+        This is the Feed Page
     </h1>
     <style jsx global>{`
         html,
