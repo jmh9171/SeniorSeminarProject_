@@ -5,13 +5,9 @@
     overflow: hidden;
     background-color: rgb(221, 219, 219);
 }
-
-
-
 .header1{
     float: right;
 }
-
 .ul li h3{
     display: block;
     color: rgb(48, 48, 48);
