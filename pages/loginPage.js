@@ -12,6 +12,7 @@ return(
     <h1>
         This is the Login Page
     </h1>
+    
     <style jsx global>{`
         html,
         body {

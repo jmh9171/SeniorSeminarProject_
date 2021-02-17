@@ -4,14 +4,8 @@ import Header from '../components/header'
 export default function hello() {
 return(
     <div>
-   
         <Head>
-            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <meta charset="utf-8"/>
-        <meta name="keywords" content=""/>
-        <meta name="description" content=""/>
-        <meta name="page_type" content="np-template-header-footer-from-plugin"/>
-        <title>CreateAccount</title>
+            <title>CreateAccount</title>
         </Head>
     <Header/>
     <h1>
