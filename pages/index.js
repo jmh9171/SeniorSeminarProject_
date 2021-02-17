@@ -7,10 +7,12 @@ export default function Home() {
         <title>Login or Create Account</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+      
       <main>
         <h1 className="title">
           Welcome to <a href="content">Next.js!</a>
+          //test
+          //this is another test
         </h1>
 
         <p className="description">
