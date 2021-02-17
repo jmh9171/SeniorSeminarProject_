@@ -11,10 +11,7 @@ export default function Home() {
       <main>
         <h1 className="title">
           Welcome to <a href="content">Next.js!</a>
-          //test
-          //this is another test
-          //hi
-          //THis is for the beta branch
+
         </h1>
 
         <p className="description">
