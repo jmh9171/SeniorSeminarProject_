@@ -13,8 +13,8 @@ app.prepare().then(() => {
     const { pathname, query } = parsedUrl
 
     if (pathname === '/content') {
-      app.render(req, res, '/content', query)
-    } else if (pathname === '/loginPage') {
+      app.render(req, res, '/loginPage', query)
+    } else if (pathname === '/content') {
       app.render(req, res, '/loginPage', query)
     } else {
       handle(req, res, parsedUrl)

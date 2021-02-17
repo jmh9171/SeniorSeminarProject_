@@ -5,7 +5,7 @@ const Header = () => (
   <header>
     <ul className={Styles.ul}>
       <li className={Styles.header1}>
-        <Link href="/"> 
+        <Link href="/loginPage"> 
         <a>Login</a>
         </Link>
       </li>
