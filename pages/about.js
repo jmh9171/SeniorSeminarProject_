@@ -4,13 +4,25 @@ import Header from '../components/header'
 
 export default function about() {
 return(
-    <div>
+  
+    <div className="bgimg w3-display-container w3-grayscale-min" id="home">
+      
     <Head>
+    <Header/> 
         <title>About Us</title>
         <link rel="icon" href="/favicon.ico" />
 
+        <center><img src="images/AboutHead.jpg" style={{width: '100%', maxHeight: '850px'}} className="w3-margin-top" /></center>
+        <div className="w3-display-middle w3-center">
+          <span className="w3-text-white" style={{fontSize: '90px'}}>Playgroup<br /></span>
+        </div>
+        <div className="w3-display-bottomright w3-center w3-padding-large">
+          <span className="w3-text-white">Img src: pexels.com</span>
+        </div>
+
+
     </Head> 
- <Header/> 
+    
 
  <style jsx>{`
 
@@ -37,17 +49,6 @@ return(
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata" />
-
-        <div className="w3-container">
-        <center><img src="images/AboutHead.jpg" style={{width: '100%', maxHeight: '850px'}} className="w3-margin-top" /></center>
-        <div className="w3-display-middle w3-center">
-          <span className="w3-text-white w3-tag w3-wide" style={{fontSize: '100px'}}>Playgroup<br /></span>
-        </div>
-        <div className="w3-display-bottomleft w3-center w3-padding-large">
-          <span className="w3-text-white">Img src: pexels.com</span>
-        </div>
-        </div>
-      
         
         {/* Add a background color and large text to the whole page */}
 
@@ -116,5 +117,6 @@ return(
         }
       `}</style>
     </div>
+
 );
 }
