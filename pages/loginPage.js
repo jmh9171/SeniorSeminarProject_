@@ -7,7 +7,7 @@ export default function hello() {
     const mysql = require('mysql');
     const connection = new Promise((resolve, reject) =>{ 
       var conn = mysql.createConnection({
-          host: 'localhost',
+          host: 'penguin',
           user: 'jmh9171',
           password: 'temp!9171',
           database: 'jmh9171'
@@ -17,7 +17,7 @@ export default function hello() {
       console.log('Connected!');
     });
   })
-  
+
     // const connection = mysql.createConnection({
     //   host: 'localhost',
     //   user: 'jmh9171',
