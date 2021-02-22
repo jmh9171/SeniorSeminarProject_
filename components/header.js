@@ -35,7 +35,7 @@ const Header = () => (
         </Link>
       </li>
       <li className={Styles.header2}>
-            <h3 className={Styles.titleCard}>PlayGroups</h3>
+            <h3 className={Styles.titleCard}>PlayGroup</h3>
       </li>
     </ul>
   </header>
