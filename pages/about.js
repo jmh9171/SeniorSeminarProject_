@@ -10,6 +10,7 @@ return(
     <Head>
     <Header/> 
         <title>About Us</title>
+        //Hello
         <link rel="icon" href="/favicon.ico" />
 
         <center><img src="images/AboutHead.jpg" style={{width: '100%', maxHeight: '850px'}} className="w3-margin-top" /></center>
