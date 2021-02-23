@@ -4,19 +4,20 @@ import Header from '../components/header'
 var i = 1;
 
 export default function hello() {
-    const mysql = require('mysql');
-    const connection = new Promise((resolve, reject) =>{ 
-      var conn = mysql.createConnection({
-          host: 'penguin',
-          user: 'jmh9171',
-          password: 'temp!9171',
-          database: 'jmh9171'
-          });
-    connection.connect((err) => {
-      if (err) throw err;
-      console.log('Connected!');
-    });
-  })
+
+  //   const mysql = require('mysql');
+  //   const connection = new Promise((resolve, reject) =>{ 
+  //     var conn = mysql.createConnection({
+  //         host: 'penguin',
+  //         user: 'jmh9171',
+  //         password: 'temp!9171',
+  //         database: 'jmh9171'
+  //         });
+  //   connection.connect((err) => {
+  //     if (err) throw err;
+  //     console.log('Connected!');
+  //   });
+  // })
 
     // const connection = mysql.createConnection({
     //   host: 'localhost',
