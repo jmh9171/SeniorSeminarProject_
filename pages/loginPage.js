@@ -151,6 +151,8 @@ export default function hello() {
                   box-sizing: border-box;
                 }
               `}</style>
+
+              <Footer/>
             </div>
         );
     
