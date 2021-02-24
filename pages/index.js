@@ -1,13 +1,16 @@
 import Head from 'next/head'
+import Header from '../components/header'
+import Footer from '../components/footer'
 
 export default function Home() {
   return (
     <div className="container">
       <Head>
+      
         <title>Login or Create Account</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      
+      <Header/> 
       <main>
         <h1 className="title">
           Home Page
@@ -36,6 +39,7 @@ export default function Home() {
           box-sizing: border-box;
         }
       `}</style>
+        <Footer/> 
     </div>
   )
 }
