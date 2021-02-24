@@ -1,8 +1,5 @@
-import { NextApiHandler } from 'next'
-import Filter from 'bad-words'
 import { query } from '../../lib/db'
 
-const filter = new Filter()
 
 const handler = async (req, res) => {
   const { id, title, content } = req.body
@@ -19,7 +16,7 @@ const handler = async (req, res) => {
       SET title = ?, content = ?
       WHERE id = ?
       `,
-      [filter.clean(title), filter.clean(content), id]
+      [title, content, id]
     )
 
     return res.json(results)

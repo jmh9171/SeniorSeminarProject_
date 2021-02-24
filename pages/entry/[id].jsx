@@ -1,8 +1,7 @@
 import { useRouter } from 'next/router'
-
-import { useEntry } from '@/lib/swr-hooks'
-import Container from '@/components/container'
-import Nav from '@/components/nav'
+import {useEntry} from '../../lib/swr-hooks'
+import Container from '../../components/container'
+import Nav from '../../components/nav'
 
 export default function EditEntryPage() {
   const router = useRouter()

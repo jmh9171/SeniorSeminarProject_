@@ -2,8 +2,8 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { mutate } from 'swr'
 
-import ButtonLink from '@/components/button-link'
-import Button from '@/components/button'
+import ButtonLink from '../../button-link'
+import Button from '../../button'
 
 function Entry({ id, title, content }) {
   const [deleting, setDeleting] = useState(false)

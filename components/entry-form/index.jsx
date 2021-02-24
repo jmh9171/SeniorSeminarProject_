@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Router from 'next/router'
 
-import Button from '@/components/button'
+import Button from '../button'
 
 export default function EntryForm() {
   const [title, setTitle] = useState('')

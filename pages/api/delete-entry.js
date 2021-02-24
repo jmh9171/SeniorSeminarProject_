@@ -1,4 +1,3 @@
-import { NextApiHandler } from 'next'
 import { query } from '../../lib/db'
 
 const handler = async (req, res) => {
