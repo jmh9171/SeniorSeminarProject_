@@ -7,14 +7,18 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "dbTest": "node dbTesting.js"
+    "dbTest": "node dbTesting.js",
+    "migrate": "node scripts/migrate-db.js"
   },
   "dependencies": {
     "clsx": "^1.1.1",
-    "mysql": "2.18.1",
     "next": "^10.0.0",
     "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "dotenv": "^8.2.0",
+    "react-dom": "17.0.1",
+    "react-loading-skeleton": "^2.1.1",
+    "serverless-mysql": "^1.5.4",
+    "swr": "^0.3.9"
   },
   "description": "This is a starter template for [Learn Next.js](https://nextjs.org/learn).",
   "main": "server.js",
