@@ -4,24 +4,24 @@ import {
 
 const handler = async (req, res) => {
   const {
-    title,
-    content
+    username,
+    password
   } = req.body
   try {
-    if (!title || !content) {
+    if (!username || !password) {
       return res
         .status(400)
         .json({
-          message: '`title` and `content` are both required'
+          message: '`username` and `password` are both required'
         })
     }
 
     const results = await query(
       `
-      INSERT INTO entries (title, content)
-      VALUES (?, ?)
-      `,
-      [title, content]
+        INSERT INTO users (username, password)
+        VALUES (?, ?)
+        `,
+      [username, password]
     )
     return res.json(results)
   } catch (e) {
@@ -30,5 +30,4 @@ const handler = async (req, res) => {
     })
   }
 }
-
 export default handler

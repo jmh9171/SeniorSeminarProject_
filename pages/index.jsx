@@ -2,8 +2,9 @@ import Skeleton from 'react-loading-skeleton'
 
 import Nav from '../components/nav'
 import Container from '../components/container'
-import Entries from '../components/entries'
+
 import { useEntries } from '../lib/swr-hooks'
+import Login from '../components/login'
 
 export default function IndexPage() {
   const { entries, isLoading } = useEntries()
@@ -28,10 +29,15 @@ export default function IndexPage() {
 
   return (
     <div>
-      <Nav />
+      
       <Container>
-        <Entries entries={entries} />
+        
+        <h1>This is the index.js page</h1>
+        <Login/>
       </Container>
+      
     </div>
   )
 }
+
+//<Entries entries={entries} />

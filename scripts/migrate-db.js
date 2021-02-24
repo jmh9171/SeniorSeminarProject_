@@ -30,7 +30,7 @@ async function query(q) {
 async function migrate() {
   try {
     await query(`
-    CREATE TABLE IF NOT EXISTS entries (
+    CREATE TABLE IF NOT EXISTS entries2 (
       id INT AUTO_INCREMENT PRIMARY KEY,
       title TEXT NOT NULL,
       content TEXT NOT NULL,
@@ -44,6 +44,7 @@ async function migrate() {
     `)
     console.log('migration ran successfully')
   } catch (e) {
+    console.error(e);
     console.error('could not run migration, double check your credentials.')
     process.exit(1)
   }
