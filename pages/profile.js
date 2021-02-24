@@ -1,5 +1,7 @@
 import Head from 'next/head'
 import Header from '../components/header'
+import Footer from '../components/footer'
+
 
 
 export default function about() {
@@ -13,6 +15,9 @@ return(
     <h1>
         This is the Profile Page
     </h1>
+
+    
+  
     <style jsx global>{`
         html,
         body {
@@ -27,6 +32,12 @@ return(
           box-sizing: border-box;
         }
       `}</style>
+
+
+
+        
+    <Footer/> 
     </div>
+
 );
 }

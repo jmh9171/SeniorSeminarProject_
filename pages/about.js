@@ -1,19 +1,20 @@
 import Head from 'next/head'
 import Header from '../components/header'
+import Footer from '../components/footer'
 
 
 export default function about() {
 return(
   
     <div className="bgimg w3-display-container w3-grayscale-min" id="home">
-      
+
     <Head>
     <Header/> 
         <title>About Us</title>
         //Hello
         <link rel="icon" href="/favicon.ico" />
 
-        <center><img src="images/AboutHead.jpg" style={{width: '100%', maxHeight: '850px'}} className="w3-margin-top" /></center>
+        <center><img src="images/AboutHead.jpg" style={{width: '100%', maxHeight: '800px'}} className="w3-margin-top" /></center>
         <div className="w3-display-middle w3-center">
           <span className="w3-text-white" style={{fontSize: '90px'}}>Playgroup<br /></span>
         </div>
@@ -21,9 +22,9 @@ return(
           <span className="w3-text-white">Img src: pexels.com</span>
         </div>
 
-
+        
     </Head> 
-    
+
 
  <style jsx>{`
 
@@ -69,15 +70,17 @@ return(
           
           {/* Menu Container */}
           <div className="w3-container" id="menu">
-            <div className="w3-content" style={{maxWidth: '750px'}}>
+            <div className="w3-content" style={{maxWidth: '1000px'}}>
               <h5 className="w3-center w3-padding-48"><span className="w3-tag w3-wide">THE MISSION</span></h5>
 
              
             <div className="w3-container" id="about">
 
             <div>
-              <center><img src="/images/Heart.png" style={{width: '50%', maxWidth: '1000px'}} className="w3-margin-top" /></center>
+              <center><img src="/images/Heart.png" style={{width: '50%', maxWidth: '500px'}} className="w3-margin-top" /></center>
               <center><h3><p>Connect with others who have a similar approah to gaming as you!</p><br /></h3></center>
+             
+
             </div>
 
 
@@ -97,7 +100,9 @@ return(
             </div>
           </div>
           {/* End page content */}
+          <Footer/> 
         </div>
+        
       </div>
 
 
@@ -117,6 +122,8 @@ return(
           box-sizing: border-box;
         }
       `}</style>
+
+
     </div>
 
 );
