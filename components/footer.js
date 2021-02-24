@@ -2,7 +2,7 @@ import Link from 'next/link'
 import Styles from './index.module.css'
 
 const Footer = () => (
-  <footer class="w3-container w3-black w3-center w3-margin-top">
+  <footer className="w3-container w3-black w3-center w3-margin-top">
 
 <meta charSet="UTF-8" />
 
