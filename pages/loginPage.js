@@ -1,14 +1,10 @@
 import Head from 'next/head'
 import Header from '../components/header'
-import db from '../dbTesting'
 
-var i = 1;
+
+
 
 export default function hello() {
-    
-  db.createConnection
-
-
         return(
             <div>
             <Head>
