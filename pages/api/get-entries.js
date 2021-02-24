@@ -1,7 +1,7 @@
 import { NextApiHandler } from 'next'
 import { query } from '../../lib/db'
 
-const handler: NextApiHandler = async (_, res) => {
+const handler = async (_, res) => {
   try {
     const results = await query(`
       SELECT * FROM entries

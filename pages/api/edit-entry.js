@@ -4,21 +4,22 @@ import { query } from '../../lib/db'
 
 const filter = new Filter()
 
-const handler: NextApiHandler = async (req, res) => {
-  const { title, content } = req.body
+const handler = async (req, res) => {
+  const { id, title, content } = req.body
   try {
-    if (!title || !content) {
+    if (!id || !title || !content) {
       return res
         .status(400)
-        .json({ message: '`title` and `content` are both required' })
+        .json({ message: '`id`,`title`, and `content` are all required' })
     }
 
     const results = await query(
       `
-      INSERT INTO entries (title, content)
-      VALUES (?, ?)
+      UPDATE entries
+      SET title = ?, content = ?
+      WHERE id = ?
       `,
-      [filter.clean(title), filter.clean(content)]
+      [filter.clean(title), filter.clean(content), id]
     )
 
     return res.json(results)
