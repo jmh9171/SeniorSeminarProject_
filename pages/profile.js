@@ -34,10 +34,10 @@ return(
           <div className="w3-third">
             <div className="w3-white w3-text-grey w3-card-4">
               <div className="w3-display-container w3-center">
-                <img src="/images/blankP.png" style={{width: '80%'}} alt="Avatar" />
+                <img src="/images/blankP.png" style={{width: '80%', marginTop: '15px'}} alt="Avatar" />
               </div>
               <div className="w3-container">
-              <p><img src="/images/blankP.png" style={{width: '8%'}} alt="Avatar" /><i className="fa fa-fw w3-margin-right" />SoraSoren</p>
+              <center><p><i/>SoraSoren</p></center>
                 <p><i className="fa fa-asterisk fa-fw w3-margin-right w3-text-teal" />My name is Louis and I like to play MMORPG's.  I also play League of Legends because I hate myself.</p>
 
                 <hr />
@@ -57,20 +57,7 @@ return(
                 <div className="w3-light-grey w3-round-xlarge w3-small">
                   <div className="w3-container w3-center w3-round-xlarge w3-teal" style={{width: '75%'}}>75%</div>
                 </div>
-
-
-
                 <br />
-                <p className="w3-large w3-text-theme"><b><i className="fa fa-globe fa-fw w3-margin-right w3-text-teal" />Languages</b></p>
-                <p>English</p>
-                <div className="w3-light-grey w3-round-xlarge">
-                  <div className="w3-round-xlarge w3-teal" style={{height: '24px', width: '100%'}} />
-                </div>
-                <p>Spanish</p>
-                <div className="w3-light-grey w3-round-xlarge">
-                  <div className="w3-round-xlarge w3-teal" style={{height: '24px', width: '80%'}} />
-                </div>
-            
                 <br />
               </div>
             </div><br />
@@ -90,33 +77,53 @@ return(
               
               <div className="w3-container">
                 <h5 className="w3-opacity"><b>Favorite tags</b></h5>
-                <div className="w3-light-grey w3-round-small w3-small" >
-                <p>FPS</p>
+                <div className="w3-dark-grey w3-round-large w3-small" style={{width: 'min-content', display: 'inline-block', marginRight: '10px'}} >
+                <p style={{display: 'inline', padding: '10px'}}>FPS</p>
                 </div>
 
+                <div className="w3-dark-grey w3-round-large w3-small" style={{width: 'min-content', display: 'inline-block', marginRight: '10px'}} >
+                <p style={{display: 'inline', padding: '10px'}}>MMO</p>
+                </div>
+
+                <div className="w3-dark-grey w3-round-large w3-small" style={{width: 'min-content', display: 'inline-block', marginRight: '10px'}} >
+                <p style={{display: 'inline', padding: '10px'}}>JRPG</p>
+                </div>
+
+                <div className="w3-dark-grey w3-round-large w3-small" style={{width: 'min-content', display: 'inline-block', marginRight: '10px'}} >
+                <p style={{display: 'inline', padding: '10px'}}>MMORPG</p>
+                </div>
+
+                <div className="w3-dark-grey w3-round-large w3-small" style={{width: 'min-content', display: 'inline-block', marginRight: '10px'}} >
+                <p style={{display: 'inline', padding: '10px'}}>CASUAL</p>
+                </div>
+
+                <div className="w3-dark-grey w3-round-large w3-small" style={{width: 'min-content', display: 'inline-block', marginRight: '10px'}} >
+                <p style={{display: 'inline', padding: '10px'}}>RACING</p>
+                </div>
+
+                <p></p>
               </div>
             </div>
 
 
             <div className="w3-container w3-card w3-white">
-              <h2 className="w3-text-grey w3-padding-16"><i className="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal" />Education</h2>
+              <h2 className="w3-text-grey w3-padding-16"><i className="fa fa-list fa-fw w3-margin-right w3-xxlarge w3-text-teal" />My Playgroups</h2>
               <div className="w3-container">
-                <h5 className="w3-opacity"><b>W3Schools.com</b></h5>
-                <h6 className="w3-text-teal"><i className="fa fa-calendar fa-fw w3-margin-right" />Forever</h6>
-                <p>Web Development! All I need to know in one place</p>
+                
+                <h5 className="w3-opacity"><b>Minecraft</b></h5>
+                <p><img src="/images/blankP.png" style={{width: '5%'}} alt="Avatar" /><i className="fa fa-fw w3-margin-right" />Super cool MC Playgroup #1</p>
+
+                <p><img src="/images/blankP.png" style={{width: '5%'}} alt="Avatar" /><i className="fa fa-fw w3-margin-right" />MC Playgroup for casuals</p>
+
+
+                <h5 className="w3-opacity"><b>League of Legends</b></h5>
+                <p><img src="/images/blankP.png" style={{width: '5%'}} alt="Avatar" /><i className="fa fa-fw w3-margin-right" />League of Legends fanclub</p>
+
+
                 <hr />
               </div>
-              <div className="w3-container">
-                <h5 className="w3-opacity"><b>London Business School</b></h5>
-                <h6 className="w3-text-teal"><i className="fa fa-calendar fa-fw w3-margin-right" />2013 - 2015</h6>
-                <p>Master Degree</p>
-                <hr />
-              </div>
-              <div className="w3-container">
-                <h5 className="w3-opacity"><b>School of Coding</b></h5>
-                <h6 className="w3-text-teal"><i className="fa fa-calendar fa-fw w3-margin-right" />2010 - 2013</h6>
-                <p>Bachelor Degree</p><br />
-              </div>
+              
+
             </div>
             {/* End Right Column */}
           </div>
