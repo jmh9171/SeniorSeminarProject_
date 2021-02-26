@@ -33,8 +33,8 @@ return(
           {/* Left Column */}
           <div className="w3-third">
             <div className="w3-white w3-text-grey w3-card-4">
-              <div className="w3-display-container">
-                <img src="/images/blankP.png" style={{width: '70%'}} alt="Avatar" />
+              <div className="w3-display-container w3-center">
+                <img src="/images/blankP.png" style={{width: '80%'}} alt="Avatar" />
               </div>
               <div className="w3-container">
               <p><img src="/images/blankP.png" style={{width: '8%'}} alt="Avatar" /><i className="fa fa-fw w3-margin-right" />SoraSoren</p>
@@ -44,14 +44,13 @@ return(
                 <p className="w3-large"><b><i className="fa fa-asterisk fa-fw w3-margin-right w3-text-teal" />Preferred games</b></p>
                 <p>Maplestory</p>
                 <div className="w3-light-grey w3-round-xlarge w3-small">
-                  <div className="w3-container w3-center w3-round-xlarge w3-teal" style={{width: '90%'}}>90%</div>
+                <center><p><i className="fa fa-star fa-fw w3-margin-right w3-text-teal" /><i className="fa fa-star fa-fw w3-margin-right w3-text-teal" /><i className="fa fa-star fa-fw w3-margin-right w3-text-teal" /><i className="fa fa-star fa-fw w3-margin-right w3-text-teal" /><i className="fa fa-star fa-fw w3-margin-right w3-text-teal" /></p></center>
                 </div>
 
                 <p>FFXIV</p>
                 <div className="w3-light-grey w3-round-xlarge w3-small">
-                  <div className="w3-container w3-center w3-round-xlarge w3-teal" style={{width: '80%'}}>
-                    <div className="w3-center w3-text-white">80%</div>
-                  </div>
+                 
+                <center><p><i className="fa fa-star fa-fw w3-margin-right w3-text-teal" /><i className="fa fa-star fa-fw w3-margin-right w3-text-teal" /><i className="fa fa-star fa-fw w3-margin-right w3-text-teal" /></p></center>
                 </div>
 
                 <p>League of Legends</p>
@@ -82,25 +81,23 @@ return(
           {/* Right Column */}
           <div className="w3-twothird">
             <div className="w3-container w3-card w3-white w3-margin-bottom">
-              <h2 className="w3-text-grey w3-padding-16"><i className="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal" />Work Experience</h2>
+              <h2 className="w3-text-grey w3-padding-16"><i className="fa fa-cube fa-fw w3-margin-right w3-xxlarge w3-text-teal" />Introduction</h2>
               <div className="w3-container">
-                <h5 className="w3-opacity"><b>Front End Developer / w3schools.com</b></h5>
-                <h6 className="w3-text-teal"><i className="fa fa-calendar fa-fw w3-margin-right" />Jan 2015 - <span className="w3-tag w3-teal w3-round">Current</span></h6>
-                <p>Lorem ipsum dolor sit amet. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.</p>
+                <h5 className="w3-opacity"><b>About me</b></h5>
+                <p>Blah blah blah I like to play X games for Y reason.  This is a test description and I can't think of anything else to write.  Hopefully this is long enough for my testing purposes.</p>
                 <hr />
               </div>
+              
               <div className="w3-container">
-                <h5 className="w3-opacity"><b>Web Developer / something.com</b></h5>
-                <h6 className="w3-text-teal"><i className="fa fa-calendar fa-fw w3-margin-right" />Mar 2012 - Dec 2014</h6>
-                <p>Consectetur adipisicing elit. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.</p>
-                <hr />
-              </div>
-              <div className="w3-container">
-                <h5 className="w3-opacity"><b>Graphic Designer / designsomething.com</b></h5>
-                <h6 className="w3-text-teal"><i className="fa fa-calendar fa-fw w3-margin-right" />Jun 2010 - Mar 2012</h6>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p><br />
+                <h5 className="w3-opacity"><b>Favorite tags</b></h5>
+                <div className="w3-light-grey w3-round-small w3-small" >
+                <p>FPS</p>
+                </div>
+
               </div>
             </div>
+
+
             <div className="w3-container w3-card w3-white">
               <h2 className="w3-text-grey w3-padding-16"><i className="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal" />Education</h2>
               <div className="w3-container">
