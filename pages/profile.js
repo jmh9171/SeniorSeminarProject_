@@ -38,24 +38,24 @@ return(
               </div>
               <div className="w3-container">
               <center><p><i/>SoraSoren</p></center>
-                <p><i className="fa fa-asterisk fa-fw w3-margin-right w3-text-teal" />My name is Louis and I like to play MMORPG's.  I also play League of Legends because I hate myself.</p>
+                <p><i className="fa fa-asterisk fa-fw w3-margin-right w3-text-dark-grey" />My name is Louis and I like to play MMORPG's.  I also play League of Legends because I hate myself.</p>
 
                 <hr />
-                <p className="w3-large"><b><i className="fa fa-asterisk fa-fw w3-margin-right w3-text-teal" />Preferred games</b></p>
+                <p className="w3-large"><b><i className="fa fa-asterisk fa-fw w3-margin-right w3-text-dark-grey" />Preferred games</b></p>
                 <p>Maplestory</p>
                 <div className="w3-light-grey w3-round-xlarge w3-small">
-                <center><p><i className="fa fa-star fa-fw w3-margin-right w3-text-teal" /><i className="fa fa-star fa-fw w3-margin-right w3-text-teal" /><i className="fa fa-star fa-fw w3-margin-right w3-text-teal" /><i className="fa fa-star fa-fw w3-margin-right w3-text-teal" /><i className="fa fa-star fa-fw w3-margin-right w3-text-teal" /></p></center>
+                <center><p><i className="fa fa-star fa-fw w3-margin-right w3-text-yellow" /><i className="fa fa-star fa-fw w3-margin-right w3-text-yellow" /><i className="fa fa-star fa-fw w3-margin-right w3-text-yellow" /><i className="fa fa-star fa-fw w3-margin-right w3-text-yellow" /><i className="fa fa-star fa-fw w3-margin-right w3-text-yellow" /></p></center>
                 </div>
 
                 <p>FFXIV</p>
                 <div className="w3-light-grey w3-round-xlarge w3-small">
                  
-                <center><p><i className="fa fa-star fa-fw w3-margin-right w3-text-teal" /><i className="fa fa-star fa-fw w3-margin-right w3-text-teal" /><i className="fa fa-star fa-fw w3-margin-right w3-text-teal" /></p></center>
+                <center><p><i className="fa fa-star fa-fw w3-margin-right w3-text-yellow" /><i className="fa fa-star fa-fw w3-margin-right w3-text-yellow" /><i className="fa fa-star fa-fw w3-margin-right w3-text-yellow" /></p></center>
                 </div>
 
                 <p>League of Legends</p>
                 <div className="w3-light-grey w3-round-xlarge w3-small">
-                  <div className="w3-container w3-center w3-round-xlarge w3-teal" style={{width: '75%'}}>75%</div>
+                  <div className="w3-container w3-center w3-round-xlarge w3-dark-grey" style={{width: '75%'}}>75%</div>
                 </div>
                 <br />
                 <br />
@@ -68,7 +68,7 @@ return(
           {/* Right Column */}
           <div className="w3-twothird">
             <div className="w3-container w3-card w3-white w3-margin-bottom">
-              <h2 className="w3-text-grey w3-padding-16"><i className="fa fa-cube fa-fw w3-margin-right w3-xxlarge w3-text-teal" />Introduction</h2>
+              <h2 className="w3-text-grey w3-padding-16"><i className="fa fa-cube fa-fw w3-margin-right w3-xxlarge w3-text-dark-grey" />Introduction</h2>
               <div className="w3-container">
                 <h5 className="w3-opacity"><b>About me</b></h5>
                 <p>Blah blah blah I like to play X games for Y reason.  This is a test description and I can't think of anything else to write.  Hopefully this is long enough for my testing purposes.</p>
@@ -107,7 +107,7 @@ return(
 
 
             <div className="w3-container w3-card w3-white">
-              <h2 className="w3-text-grey w3-padding-16"><i className="fa fa-list fa-fw w3-margin-right w3-xxlarge w3-text-teal" />My Playgroups</h2>
+              <h2 className="w3-text-grey w3-padding-16"><i className="fa fa-list fa-fw w3-margin-right w3-xxlarge w3-text-dark-grey" />My Playgroups</h2>
               <div className="w3-container">
                 
                 <h5 className="w3-opacity"><b>Minecraft</b></h5>
