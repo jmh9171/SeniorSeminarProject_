@@ -13,7 +13,6 @@ export default function EntryForm() {
     setSubmitting(true)
     e.preventDefault()
     try {
-        console.log("here");
       const res = await fetch('/api/new-user', {
         method: 'POST',
         headers: {
