@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import Styles from './index.module.css'
+import Styles from '../index.module.css'
 
 const Header = () => (
   <header>

@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import Styles from './index.module.css'
+import Styles from '../index.module.css'
 
 const Footer = () => (
   <footer className="w3-container w3-black w3-center w3-margin-top">
