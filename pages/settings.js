@@ -9,7 +9,6 @@ return(
         <title>This is the login page</title>
         <link rel="icon" href="/favicon.ico" />
     </Head>
-    <Header/>
     <h1>
         This is the Settings Page
     </h1>

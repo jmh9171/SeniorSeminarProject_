@@ -7,7 +7,6 @@ return(
         <Head>
             <title>CreateAccount</title>
         </Head>
-    <Header/>
     <h1>
         This is the Content Page
     </h1>

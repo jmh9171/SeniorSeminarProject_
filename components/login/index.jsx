@@ -7,7 +7,6 @@ import Button from '../button'
 export default function EntryForm() {
   const [username, setUname] = useState('')
   const [password, setPword] = useState('')
-  const [submitting, setSubmitting] = useState(false)
 
   async function submitHandler(e) {
     setSubmitting(true)
@@ -36,8 +35,6 @@ export default function EntryForm() {
 
   return (
       <>
-
-      <h1>Hello</h1>
     <form className={Styles.form} onSubmit={submitHandler}>
           <div className={Styles.container}>
             <label htmlFor="uname"><b>Username</b></label>
