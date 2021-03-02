@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Header from '../components/header/header'
 import Footer from '../components/footer/footer'
+import Mainprofile from '../components/profile/mainProfile'
 
 
 
@@ -13,7 +14,7 @@ return(
     </Head>
     <Header/>
     
-    <meta charSet="UTF-8" />
+<meta charSet="UTF-8" />
 
 <style dangerouslySetInnerHTML={{__html: "\nhtml,body,h1,h2,h3,h4,h5,h6 {font-family: \"Roboto\", sans-serif}\n" }} />
 
@@ -30,6 +31,8 @@ return(
  <div className="w3-content w3-margin-top" style={{maxWidth: '1400px'}}>
         {/* The Grid */}
         <div className="w3-row-padding">
+
+
           {/* Left Column */}
           <div className="w3-third">
             <div className="w3-white w3-text-grey w3-card-4">
@@ -63,6 +66,8 @@ return(
             </div><br />
             {/* End Left Column */}
           </div>
+
+          
 
 
           {/* Right Column */}
