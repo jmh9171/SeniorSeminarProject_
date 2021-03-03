@@ -65,6 +65,8 @@ export default function hello() {
           /* Bordered form */
           form {
             border: 3px solid #f1f1f1;
+            width: 50%;
+            margin: auto;
           }
           
           /* Full-width inputs */
