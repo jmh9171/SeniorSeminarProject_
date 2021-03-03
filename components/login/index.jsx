@@ -40,6 +40,9 @@ export default function EntryForm() {
     <>
       <h1>This is the Login Page</h1>
       <form className={Styles.form} onSubmit={submitHandler}>
+      <div className={Styles.imgcontainer}>
+            <img src="../../images/blankP.png" alt="Avatar" className={Styles.avatar} />
+          </div>
         <div className={Styles.container}>
           <label htmlFor="uname"><b>Username</b></label>
           <input
@@ -59,13 +62,13 @@ export default function EntryForm() {
             value={password}
             onChange={(e) => setPword(e.target.value)}
           />
-          <button className={Styles.Button} type="submit">Login</button>
+          <button className={Styles.button} type="submit">Login</button>
           <label>
             <input type="checkbox" defaultChecked="checked" name="remember" /> Remember me
             </label>
         </div>
-        <div className="container" style={{ backgroundColor: '#f1f1f1' }}>
-          <button type="button" className="cancelbtn">Cancel</button>
+        <div className={Styles.container} style={{ backgroundColor: '#f1f1f1' }}>
+          <button type="button" className={Styles.cancelbtn}>Cancel</button>
           <span className={Styles.psw}>Forgot <a href="#">password?</a></span>
         </div>
       </form>
