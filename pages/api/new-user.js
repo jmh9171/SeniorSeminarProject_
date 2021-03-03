@@ -9,13 +9,13 @@ const handler = async (req, res) => {
     password
   } = req.body
   try {
-    // if (!username || !password) {
-    //   return res
-    //     .status(400)
-    //     .json({
-    //       message: '`username` and `password` are both required'
-    //     })
-    // }
+    if (!username || !password) {
+      return res
+        .status(400)
+        .json({
+          message: '`username` and `password` are both required'
+        })
+    }
 
     const results = await query(
       `

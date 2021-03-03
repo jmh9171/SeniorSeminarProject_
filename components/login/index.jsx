@@ -23,12 +23,14 @@ export default function EntryForm() {
           password,
         }),
       })
-      
-      const json = await res.json()
-      Router.push('/')
-      if (!res.ok) throw Error(json.message)
 
+      const json = await res.json()
       
+      if (!res.ok) {
+        Router.push('/loginPage')
+        throw Error(json.message)
+      }
+      Router.push('/')
     } catch (e) {
       throw Error(e.message)
     }
@@ -36,7 +38,7 @@ export default function EntryForm() {
 
   return (
     <>
-    <h1>This is the Login Page</h1>
+      <h1>This is the Login Page</h1>
       <form className={Styles.form} onSubmit={submitHandler}>
         <div className={Styles.container}>
           <label htmlFor="uname"><b>Username</b></label>
@@ -53,7 +55,7 @@ export default function EntryForm() {
             className={Styles.input}
             type="password"
             placeholder="Enter Password"
-            name="psw" required
+            name="psw"
             value={password}
             onChange={(e) => setPword(e.target.value)}
           />
