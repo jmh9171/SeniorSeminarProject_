@@ -5,7 +5,7 @@ import Container from '../components/container'
 
 import { useEntries } from '../lib/swr-hooks'
 
-import Header from '../components/header'
+import Header from '../components/header-nav'
 
 export default function IndexPage() {
   const { entries, isLoading } = useEntries()
@@ -30,12 +30,9 @@ export default function IndexPage() {
 
   return (
     <div>
-      
       <Container>
         <h1>This is the index.js page</h1>
-        
       </Container>
-      
     </div>
   )
 }

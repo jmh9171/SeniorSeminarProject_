@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Header from '../components/header'
+import Header from '../components/header-nav'
 
 export default function about() {
 return(

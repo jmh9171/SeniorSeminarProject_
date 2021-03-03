@@ -1,6 +1,6 @@
 import '../styles/index.css'
 import Footer from '../components/footer'
-import HeaderNav from '../components/header'
+import HeaderNav from '../components/header-nav/index.jsx'
 
 function MyApp({ Component, pageProps }) {
   return (
