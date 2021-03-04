@@ -1,6 +1,7 @@
 import Head from 'next/head'
-import Header from '../components/header/header'
-import Footer from '../components/footer/footer'
+import Header from '../components/header'
+import Footer from '../components/footer'
+
 
 export default function about() {
     return(
@@ -15,59 +16,75 @@ export default function about() {
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
             <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata" />
-    </div>
+
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  </div>
     
-            <center><img src="images/GroupsBG.jpg" style={{opacity: '0.9', width: '100%', maxHeight: '1200px'}} className="w3-margin-top" /></center>
-            <div className="w3-display-middle w3-center" style={{width: '50%', height: '85%'}}>
-              <span className="w3-text-white" style={{fontSize: '90px'}}>Find Groups<br /></span>
-    
-    
-              <center> 
-            <div className="w3-middle-align" style={{maxWidth: '800px', maxHeight: '250px', overflow: 'hidden', overflow: 'auto'}}>
-            <div>
-              <p className="w3-middle-align w3-text-white"><img src="/images/minecraftLogo.png" style={{width: '5%'}} alt="Minecraft" /><i className="fa fa-fw w3-margin-right" />Super cool MC Playgroup #1</p>
-            </div> 
+            <center><img src="images/TestPage.jpg" style={{opacity: '0.9', width: '100%', maxHeight: '1200px'}} className="w3-margin-top" /></center>
+        <div className="w3-display-middle w3-center" style={{width: '50%', height: '85%'}}>
+              <span className="w3-text-black w3-padding-20" style={{fontSize: '120px'}}>Find Groups<br /></span>
     
     
-            <div>
-              <p className="w3-middle-align w3-text-white"><img src="/images/LeagueLogo.png" style={{width: '5%'}} alt="League of Legends" /><i className="fa fa-fw w3-margin-right" />League of Legends fanclub</p>
-            </div> 
-    
-    
-            <div> 
-              <p className="w3-middle-align w3-text-white"><img src="/images/blankP.png" style={{width: '5%'}} alt="Filler" /><i className="fa fa-fw w3-margin-right" />Filler Playgroup</p>
-            </div> 
-    
-            <div>
-            <p  className="w3-middle-align w3-text-white"><img src="/images/blankP.png" style={{width: '5%'}} alt="Filler" /><i className="fa fa-fw w3-margin-right" />Filler Playgroup</p>
-            </div> 
-    
-            <div>
-            <p className="w3-middle-align w3-text-white"><img src="/images/blankP.png" style={{width: '5%'}} alt="Filler" /><i className="fa fa-fw w3-margin-right" />Filler Playgroup</p>
-            </div> 
-    
-            <div>
-            <p className="w3-middle-align w3-text-white"><img src="/images/blankP.png" style={{width: '5%'}} alt="Filler" /><i className="fa fa-fw w3-margin-right" />Filler Playgroup</p>
-            </div> 
-    
-            <div>
-            <p className="w3-middle-align w3-text-white"><img src="/images/blankP.png" style={{width: '5%'}} alt="Filler" /><i className="fa fa-fw w3-margin-right" />Filler Playgroup</p>
-            </div> 
-    
-            <div>
-            <p className="w3-middle-align w3-text-white"><img src="/images/blankP.png" style={{width: '5%'}} alt="Filler" /><i className="fa fa-fw w3-margin-right" />Filler Playgroup</p>
-            </div> 
-    
-            <div>
-            <p className="w3-middle-align w3-text-white"><img src="/images/blankP.png" style={{width: '5%'}} alt="Filler" /><i className="fa fa-fw w3-margin-right" />Filler Playgroup</p>
-            </div> 
+    <center> 
+      <div className="w3-middle-align" style={{maxWidth: '800px', maxHeight: '250px', overflow: 'hidden', overflow: 'auto'}}>
+
+
+            <form className="example w3-padding-20" action="/action_page.php">
+              <input type="text" placeholder="Search.." name="search" />
+              <button type="submit"><i className="fa fa-search" /></button>
+            </form>
+
+           
+
             
       </div>
     </center> 
     
-            </div>
+        </div>
     
     
+
+            <style jsx>{`
+            body {
+              font-family: Arial;
+            }
+            
+            * {
+              box-sizing: border-box;
+            }
+            
+            form.example input[type=text] {
+              padding: 10px;
+              font-size: 17px;
+              border: 1px solid grey;
+              float: left;
+              width: 80%;
+              background: #f1f1f1;
+            }
+            
+            form.example button {
+              float: left;
+              width: 20%;
+              padding: 10px;
+              background: #202020;
+              color: white;
+              font-size: 17px;
+              border: 1px solid grey;
+              border-left: none;
+              cursor: pointer;
+            }
+            
+            form.example button:hover {
+              background: #808080;
+            }
+            
+            form.example::after {
+              content: "";
+              clear: both;
+              display: table;
+            }
+          `}</style>
     
     
     

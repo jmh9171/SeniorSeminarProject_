@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Styles from '../index.module.css'
-import Tags from './Tags'
+import Tags from '../Tags'
 
 const Introduction = () => (
     <introduction>

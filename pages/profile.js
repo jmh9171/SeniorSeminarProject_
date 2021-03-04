@@ -1,9 +1,9 @@
 import Head from 'next/head'
-import Header from '../components/header/header'
-import Footer from '../components/footer/footer'
-import Mainprofile from '../components/profile/mainProfile'
-import Introduction from '../components/profile/Introduction'
-import Profileplaygroups from '../components/profile/profilePlaygroups'
+import Header from '../components/header'
+import Footer from '../components/footer'
+import Mainprofile from '../components/mainProfile'
+import Introduction from '../components/Introduction'
+import Profileplaygroups from '../components/profilePlaygroups'
 
 
 

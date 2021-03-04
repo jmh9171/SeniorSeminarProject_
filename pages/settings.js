@@ -1,6 +1,6 @@
 import Head from 'next/head'
-import Header from '../components/header/header'
-import Footer from '../components/footer/footer'
+import Header from '../components/header'
+
 
 
 export default function about() {
