@@ -1,11 +1,14 @@
 import Link from 'next/link'
 import Styles from './index.module.css'
+import parseCookie from '../../lib/parseCookie'
 
 
-var flag = false;
+
+
 
 export default function Header() {
-  if (!flag) {
+
+  if (1) {
     return (
       <header>
         <ul className={Styles.ul}>
@@ -68,5 +71,7 @@ export default function Header() {
     )
   }
 }
+
+
 
 
