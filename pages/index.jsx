@@ -5,7 +5,6 @@ import Container from '../components/container'
 
 import { useEntries } from '../lib/swr-hooks'
 
-import Header from '../components/header-nav'
 
 export default function IndexPage() {
   const { entries, isLoading } = useEntries()
@@ -36,5 +35,3 @@ export default function IndexPage() {
     </div>
   )
 }
-
-//<Entries entries={entries} />

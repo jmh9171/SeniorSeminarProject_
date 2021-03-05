@@ -4,8 +4,9 @@ import { useState, useEffect } from 'react'
 import Router from 'next/router'
 // css styles
 import Styles from './index.module.css'
-// for cookies
-import Cookie from "js-cookie"
+
+
+const fetcher = (url) => fetch(url).then((res) => res.text())
 
 //component that is returned
 export default function EntryForm() {
@@ -13,12 +14,6 @@ export default function EntryForm() {
   //stateful variables and their set methods
   const [username, setUname] = useState('')
   const [password, setPword] = useState('')
-
-  // method called after rendering of the page.
-  // setting the cookie
-  useEffect(() => {
-    Cookie.set("username", username);
-  }, [username])
 
   // callback method for when submit button is pressed
   async function submitHandler(e) {
@@ -44,6 +39,7 @@ export default function EntryForm() {
         Router.push('/loginPage')
         throw Error(json.message)
       }
+      //TODO
       Router.push('/loginPage')
     } catch (e) {
       throw Error(e.message)

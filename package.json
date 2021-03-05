@@ -21,7 +21,7 @@
     "react-dom": "17.0.1",
     "react-loading-skeleton": "^2.1.1",
     "serverless-mysql": "^1.5.4",
-    "swr": "^0.3.9"
+    "swr": "^0.3.11"
   },
   "description": "This is a starter template for [Learn Next.js](https://nextjs.org/learn).",
   "main": "server.js",
