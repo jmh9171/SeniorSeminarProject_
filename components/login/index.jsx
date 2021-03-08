@@ -4,12 +4,28 @@ import { useState, useEffect } from 'react'
 import Router from 'next/router'
 // css styles
 import Styles from './index.module.css'
+// 
+import useUser from '../../lib/useUser'
+
+import fetchJson from '../../lib/fetchJson'
 
 
-const fetcher = (url) => fetch(url).then((res) => res.text())
+
 
 //component that is returned
 export default function EntryForm() {
+
+  // from here is the new code
+  // import mutateUser from useUser, have to do it in {} because 
+  // it is not the default export. Set settings for object
+  const { mutateUser } = useUser({
+    // this is where the user goes after they create the cookie
+    redirectTo: '/profile',
+    redirectIfFound: true,
+  })
+  //create an 'errorMsg' stateful value and a function to change it
+  const [errorMsg, setErrorMsg] = useState('')
+  // to here
 
   //stateful variables and their set methods
   const [username, setUname] = useState('')
@@ -18,6 +34,14 @@ export default function EntryForm() {
   // callback method for when submit button is pressed
   async function submitHandler(e) {
     e.preventDefault()
+
+    // create a json object that holds the username you input
+    // get the username from the event of the submit button
+    const body = {
+      username: username,
+    }
+
+
     try {
       //fetches to the api for new user
       const res = await fetch('/api/new-user', {
@@ -31,16 +55,26 @@ export default function EntryForm() {
           password,
         }),
       })
+
+
+      // call the mutateUser callback function 
+      // this should be what creates the session
+      await mutateUser(
+        // fetch the data from the login api with the username in the body of the message
+        fetchJson('/api/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(body),
+        })
+      )
+
       // call the method for the api
       const json = await res.json()
 
       //if the response is okay push a path to the router
       if (!res.ok) {
-        Router.push('/loginPage')
         throw Error(json.message)
       }
-      //TODO
-      Router.push('/loginPage')
     } catch (e) {
       throw Error(e.message)
     }
@@ -85,7 +119,3 @@ export default function EntryForm() {
     </>
   )
 }
-
-
-
-

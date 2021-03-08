@@ -2,8 +2,9 @@ import Head from 'next/head'
 import Login from '../components/login'
 
 
-export default function loginPage({ cookieName }) {
-  console.log(cookieName);
+
+export default function loginPage() {
+
   return (
     <div>
       <Head>

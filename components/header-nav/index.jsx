@@ -1,14 +1,15 @@
 import Link from 'next/link'
 import Styles from './index.module.css'
-import parseCookie from '../../lib/parseCookie'
-
-
-
-
+import useUser from '../../lib/useUser'
+import React from 'react'
+import { useRouter } from 'next/router'
+import fetchJson from '../../lib/fetchJson'
 
 export default function Header() {
+  const { user, mutateUser } = useUser({ redirectTo: '/profile' })
+  const router = useRouter()
 
-  if (1) {
+  if (!user || user.isLoggedIn === false) {
     return (
       <header>
         <ul className={Styles.ul}>
@@ -34,9 +35,15 @@ export default function Header() {
       <header>
         <ul className={Styles.ul}>
           <li className={Styles.header1}>
-            <Link href="/loginPage">
-              <a>Login</a>
-            </Link>
+            <a
+              href="/api/logout"
+              onClick={async (e) => {
+                e.preventDefault()
+                await mutateUser(fetchJson('/api/logout'))
+                router.push('/loginPage')
+              }}
+            >Logout</a>
+
           </li>
           <li className={Styles.header1}>
             <Link href="/feed">
@@ -49,7 +56,7 @@ export default function Header() {
             </Link>
           </li>
           <li className={Styles.header1}>
-            <Link href="profile" >
+            <Link href="/profile" >
               <a>Profile</a>
             </Link>
           </li>
