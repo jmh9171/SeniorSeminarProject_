@@ -41,7 +41,7 @@ const Mainprofile = () => (
     <div className="w3-third">
             <div className="w3-white w3-text-grey w3-card-4">
               <div className="w3-display-container w3-center">
-                  <Avatar avatarURL="https://placekitten.com/g/64/64 "/>
+                  <Avatar avatarURL="https://placekitten.com/g/64/64"/>
               </div>
               <div className="w3-container">
               <center><p><i/><Username name="SoraSoren"/></p></center>
