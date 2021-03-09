@@ -69,8 +69,6 @@ return(
         }
       `}</style>
 
-    <App />
-
 
         
     <Footer/> 
