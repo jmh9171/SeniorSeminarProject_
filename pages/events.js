@@ -15,7 +15,7 @@ return(
         //Hello
         <link rel="icon" href="/favicon.ico" />
 
-        <center><img src="images/Mainslide.jpg" style={{width: '99%', maxHeight: '800px'}} className="w3-margin-top" /></center>
+        <center><img src="images/AboutHead.jpg" style={{width: '99%', maxHeight: '800px'}} className="w3-margin-top" /></center>
         <div className="w3-display-middle w3-center">
           <span className="w3-text-white" style={{fontSize: '90px'}}>Playgroup<br /></span>
         </div>
@@ -56,11 +56,15 @@ return(
         {/* Add a background color and large text to the whole page */}
 
         <div className="w3-sand w3-grayscale w3-large">
-          {/* Main Container */}
+          {/* About Container */}
           <div className="w3-container" id="about">
             <div className="w3-content" style={{maxWidth: '700px'}}>
               <h5 className="w3-center w3-padding-64"><span className="w3-tag w3-wide">ABOUT PLAYGROUP</span></h5>
-              <p> Welcome to the playgroup where we try to cutomize your gaming experience for maximume fun </p>
+              <p>. Here is a list of upcoming community events that will be happening over the course of the year on diffrent games </p>
+
+              <p>. EVENTS </p>
+
+              <p>. JANUARY 2021 </p>
              
               <div className="w3-panel w3-leftbar w3-light-grey">
 
@@ -68,43 +72,10 @@ return(
             </div>
           </div>
           
-
-
-
-
           {/* Menu Container */}
           <div className="w3-container" id="menu">
             <div className="w3-content" style={{maxWidth: '1000px'}}>
-            <h5 className="w3-center w3-padding-48"><span className="w3-tag w3-wide">THE MISSION</span></h5>
-              
-            <div>
-              <center><img src="/images/AboutTG.jpg" style={{width: '50%', maxWidth: '500px'}} className="w3-margin-top" /></center>
-              <center><h3><p>Learn more about our site by heading to the about page</p><br /></h3></center>
-             
-
-            </div>
-            <div>
-              <center><img src="/images/NewsTG.jpg" style={{width: '50%', maxWidth: '500px'}} className="w3-margin-top" /></center>
-              <center><h3><p>Keep up to date on all things GroupPlay on our site news tab</p><br /></h3></center>
-             
-
-            </div>
-
-
-            <div>
-              <center><img src="/images/EventsTG.jpg" style={{width: '50%', maxWidth: '500px'}} className="w3-margin-top" /></center>
-              <center><h3><p>FInd out about new and exitining events that are open to every one</p><br /></h3></center>
-             
-
-            </div>
-
-            <div>
-              <center><img src="/images/JustchattingTG.jpg" style={{width: '50%', maxWidth: '500px'}} className="w3-margin-top" /></center>
-              <center><h3><p>Find a group to go and play your favorite games</p><br /></h3></center>
-             
-
-            </div>
-
+              <h5 className="w3-center w3-padding-48"><span className="w3-tag w3-wide">THE MISSION</span></h5>
 
              
             <div className="w3-container" id="about">
