@@ -1,6 +1,12 @@
-import Link from 'next/link'
-import Styles from '../index.module.css'
 import Tags from '../Tags'
+import React from 'react';
+
+function Aboutme(props){
+  return (
+    <p>{props.aboutme}</p>
+  );
+}
+
 
 const Introduction = () => (
     <introduction>
@@ -10,7 +16,7 @@ const Introduction = () => (
 
               <div className="w3-container">
                 <h5 className="w3-opacity"><b>About me</b></h5>
-                <p>Blah blah blah I like to play X games for Y reason.  This is a test description and I can't think of anything else to write.  Hopefully this is long enough for my testing purposes.</p>
+                <Aboutme aboutme="Blah blah blah I like to play X games for Y reason.  This is a test description and I can't think of anything else to write.  Hopefully this is long enough for my testing purposes."/>
                 <hr />
               </div>
 

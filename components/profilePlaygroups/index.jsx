@@ -1,5 +1,16 @@
-import Link from 'next/link'
-import Styles from '../index.module.css'
+import React from 'react';
+
+function Gametitle(props){
+  return (
+    <h5 className="w3-opacity"><b>{props.gametitle}</b></h5>
+  );
+}
+
+function Gamegroup(props){
+  return (
+    <p><img src={props.imgsrc} style={{width: '5%'}} alt="Avatar" /><i className="fa fa-fw w3-margin-right" />{props.groupname}</p>
+  );
+}
 
 const Profileplaygroups = () => (
     <profileplaygroups>
@@ -8,14 +19,14 @@ const Profileplaygroups = () => (
               <h2 className="w3-text-grey w3-padding-16"><i className="fa fa-list fa-fw w3-margin-right w3-xxlarge w3-text-dark-grey" />My Playgroups</h2>
               <div className="w3-container">
                 
-                <h5 className="w3-opacity"><b>Minecraft</b></h5>
-                <p><img src="/images/blankP.png" style={{width: '5%'}} alt="Avatar" /><i className="fa fa-fw w3-margin-right" />Super cool MC Playgroup #1</p>
+                <Gametitle gametitle="Minecraft"/>
 
-                <p><img src="/images/blankP.png" style={{width: '5%'}} alt="Avatar" /><i className="fa fa-fw w3-margin-right" />MC Playgroup for casuals</p>
+                <Gamegroup imgsrc="/images/blankP.png" groupname="Super cool MC Playgroup #1"/>
+                <Gamegroup imgsrc="/images/blankP.png" groupname="MC Playgroup for casuals"/>
 
+                <Gametitle gametitle="League of Legends"/>
 
-                <h5 className="w3-opacity"><b>League of Legends</b></h5>
-                <p><img src="/images/blankP.png" style={{width: '5%'}} alt="Avatar" /><i className="fa fa-fw w3-margin-right" />League of Legends fanclub</p>
+                <Gamegroup imgsrc="/images/blankP.png" groupname="League of Legends fanclub"/>
 
                 <hr />
               </div>
