@@ -4,7 +4,8 @@ import Footer from '../components/footer'
 import Mainprofile from '../components/mainProfile'
 import Introduction from '../components/Introduction'
 import Profileplaygroups from '../components/profilePlaygroups'
-
+import App from '../components/profileTest'
+import React from 'react';
 
 
 export default function about() {
@@ -68,6 +69,7 @@ return(
         }
       `}</style>
 
+    <App />
 
 
         
