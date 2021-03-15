@@ -1,6 +1,8 @@
 import Head from 'next/head'
 import Header from '../components/header'
 import Footer from '../components/footer'
+import Testjs from '../components/testjs'
+
 
 
 export default function about() {
@@ -19,28 +21,29 @@ export default function about() {
 
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
   </div>
+
     
             <center><img src="images/TestPage.jpg" style={{opacity: '0.9', width: '100%', maxHeight: '1200px'}} className="w3-margin-top" /></center>
-        <div className="w3-display-middle w3-center" style={{width: '50%', height: '85%'}}>
-              <span className="w3-text-black w3-padding-20" style={{fontSize: '120px'}}>Find Groups<br /></span>
+        <div className="w3-display-middle w3-center" style={{width: '50%', height: '85%', Padding: '30px'}}>
+              <span className="w3-text-black w3-display-container" style={{fontSize: '120px', padding: '10px'}}>Find Groups<br /></span>
     
     
     <center> 
-      <div className="w3-middle-align" style={{maxWidth: '800px', maxHeight: '250px', overflow: 'hidden', overflow: 'auto'}}>
 
+      <div className="w3-middle-align" style={{maxWidth: '800px', maxHeight: '250px', overflow: 'hidden', overflow: 'auto', padding: '50px'}}>
 
             <form className="example w3-padding-20" action="/action_page.php">
               <input type="text" placeholder="Search.." name="search" />
               <button type="submit"><i className="fa fa-search" /></button>
             </form>
-
-           
-
-            
-      </div>
-    </center> 
     
+      </div>
+
+    </center> 
+
+
         </div>
     
     
@@ -86,7 +89,11 @@ export default function about() {
             }
           `}</style>
     
-    
+
+
+
+<Testjs/>
+
     
     
         <style jsx global>{`
