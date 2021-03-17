@@ -2,6 +2,8 @@ import Head from 'next/head'
 import Header from '../components/header'
 import Footer from '../components/footer'
 import Group from '../components/group'
+import EntryForm from '../components/entry-form'
+import button from '../components/button'
 import Picturehead from '../components/picturehead'
 import Aboutplaygroup from '../components/aboutplaygroup'
 import Themission from '../components/themission'
@@ -101,7 +103,7 @@ return(
 
 
 <div className="w3-center" style={{maxWidth: '500px', borderStyle: 'dotted', maxHeight: '600px', overflow: 'hidden', overflow: 'auto'}}>
-      <Group/>
+      <EntryForm/>
       
        
 </div>
