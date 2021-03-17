@@ -2,11 +2,12 @@ import Link from 'next/link'
 import Styles from './index.module.css'
 import useUser from '../../lib/useUser'
 import React from 'react'
+import Router from 'next/router'
 import { useRouter } from 'next/router'
 import fetchJson from '../../lib/fetchJson'
 
 export default function Header() {
-  const { user, mutateUser } = useUser({ redirectTo: '/profile' })
+  const { user, mutateUser } = useUser({ redirectTo: '/loginPage' })
   const router = useRouter()
 
   if (!user || user.isLoggedIn === false) {

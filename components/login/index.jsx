@@ -73,10 +73,10 @@ export default function EntryForm() {
 
       //if the response is okay push a path to the router
       if (!res.ok) {
-        throw Error(json.message)
+        console.log(json.message)
       }
     } catch (e) {
-      throw Error(e.message)
+      console.log(e.message)
     }
   }
 

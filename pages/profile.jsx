@@ -1,17 +1,18 @@
 import Head from 'next/head'
 
 
+
 export default function about() {
-return(
+  return (
     <div>
-    <Head>
-        <title>This is the login page</title>
+      <Head>
+        <title>This is the Profile page</title>
         <link rel="icon" href="/favicon.ico" />
-    </Head>
-    <h1>
+      </Head>
+      <h1>
         This is the Profile Page
     </h1>
-    <style jsx global>{`
+      <style jsx global>{`
         html,
         body {
           padding: 0;
@@ -26,5 +27,5 @@ return(
         }
       `}</style>
     </div>
-);
+  );
 }

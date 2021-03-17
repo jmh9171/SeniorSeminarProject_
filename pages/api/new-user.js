@@ -1,7 +1,10 @@
 import {
   query
 } from '../../lib/db'
-
+/**
+ * @param  {} req
+ * @param  {} res
+ */
 const handler = async (req, res) => {
 
   const {
@@ -31,7 +34,5 @@ const handler = async (req, res) => {
       message: e.message
     })
   }
-
-
 }
 export default handler
