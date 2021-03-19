@@ -1,6 +1,8 @@
 import Head from 'next/head'
 import Header from '../components/header'
 import Footer from '../components/footer'
+import Event from '../components/event'
+
 
 
 
@@ -59,39 +61,20 @@ return(
           {/* About Container */}
           <div className="w3-container" id="about">
             <div className="w3-content" style={{maxWidth: '700px'}}>
-              <h5 className="w3-center w3-padding-64"><span className="w3-tag w3-wide">ABOUT PLAYGROUP</span></h5>
-              <p>. Here is a list of upcoming community events that will be happening over the course of the year on diffrent games </p>
+              <h5 className="w3-center w3-padding-64"><span className="w3-tag w3-wide">Events</span></h5>
+              <h5 className="w3-center w3-padding-24"><span className="w3-wide">Here is a list of upcoming community events that will be happening over the course of the year on diffrent games </span></h5>
 
-              <p>. EVENTS </p>
-
-              <p>. JANUARY 2021 </p>
+              <Event/>
+              <Event/>
              
-              <div className="w3-panel w3-leftbar w3-light-grey">
+              <div className="w3-panel w3-leftbar w3-light-grey"></div>
 
-              </div>
             </div>
           </div>
           
-          {/* Menu Container */}
-          <div className="w3-container" id="menu">
-            <div className="w3-content" style={{maxWidth: '1000px'}}>
-              <h5 className="w3-center w3-padding-48"><span className="w3-tag w3-wide">THE MISSION</span></h5>
-
-             
-            <div className="w3-container" id="about">
-
-    
 
 
 
-            </div>
-             
-
-
-
-
-            </div>
-          </div>
           {/* End page content */}
           <Footer/> 
         </div>

@@ -59,25 +59,6 @@ return(
                     <div className="w3-content" style={{maxWidth: '1500px'}}>
                     <h5 className="w3-center w3-padding-48"><span className="w3-tag w3-wide">Group chat</span></h5>
 
-{/*                     
-                    <div className="w3-container" id="about">
-
-                        <div className="w3-left">
-                            <center><img src="/images/Heart.png" style={{width: '50%', maxWidth: '50px'}} className="w3-left"/></center>
-                            <center><h3><p>Connect with others who have a similar approah to gaming as you!</p><br /></h3></center>
-                        </div>
-
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-
-                        <div className="w3-left">
-                            <center><img src="/images/Profile.png" style={{width: '50%', maxWidth: '50px'}} className="w3-right"/></center>
-                            <center><h3><p>Customize your profile and Playgroup in a way that works for you.</p><br /></h3></center>
-                        </div>
-                    </div> */}
-
 
                     
 <div className="w3-left" style={{maxWidth: '500px', borderStyle: 'hidden', maxHeight: '600px', overflow: 'hidden', overflow: 'auto'}}>
