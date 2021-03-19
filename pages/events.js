@@ -4,8 +4,6 @@ import Footer from '../components/footer'
 import Event from '../components/event'
 
 
-
-
 export default function about() {
 return(
   
@@ -64,6 +62,7 @@ return(
               <h5 className="w3-center w3-padding-64"><span className="w3-tag w3-wide">Events</span></h5>
               <h5 className="w3-center w3-padding-24"><span className="w3-wide">Here is a list of upcoming community events that will be happening over the course of the year on diffrent games </span></h5>
 
+              <Event/>
               <Event/>
               <Event/>
              
