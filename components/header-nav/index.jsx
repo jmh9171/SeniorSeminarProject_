@@ -7,6 +7,15 @@ import { useRouter } from 'next/router'
 import fetchJson from '../../lib/fetchJson'
 
 export default function Header() {
+  /** Basic description of how scoping of pages with authentication works:
+   * 
+   * - Set 'redirectTo:' to what page you want the user to be directed to upon landing on the site
+   * - The server will direct the user to this page when they type in the url to the site
+   * - The user can access other pages on the site through buttons or links or if they are
+   *  routed there by the server.
+   * - Because clicking buttons or links is the main way to navigate the site, this should not
+   *  be an issue. 
+   */
   const { user, mutateUser } = useUser({ redirectTo: '/loginPage' })
   const router = useRouter()
 
@@ -17,6 +26,11 @@ export default function Header() {
           <li className={Styles.header1}>
             <Link href="/loginPage">
               <a>Login</a>
+            </Link>
+          </li>
+          <li className={Styles.header1}>
+            <Link href="/new-user" >
+              <a>Create Account</a>
             </Link>
           </li>
           <li className={Styles.header1}>
@@ -52,7 +66,7 @@ export default function Header() {
             </Link>
           </li>
           <li className={Styles.header1}>
-            <Link href="/settings" as="/post/2020/first-post/with/catch/all/routes">
+            <Link href="/settings">
               <a>Settings</a>
             </Link>
           </li>

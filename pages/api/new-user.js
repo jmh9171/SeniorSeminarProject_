@@ -8,15 +8,16 @@ import {
 const handler = async (req, res) => {
 
   const {
+    email,
     username,
     password
   } = req.body
   try {
-    if (!username || !password) {
+    if (!username || !password || !email) {
       return res
         .status(400)
         .json({
-          message: '`username` and `password` are both required'
+          message: 'Must supply a `username`, `password` and `email`'
         })
     }
 
