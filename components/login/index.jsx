@@ -37,14 +37,14 @@ export default function EntryForm() {
 
     // create a json object that holds the username you input
     // get the username from the event of the submit button
-    const body = {
-      username: username,
-    }
+    // const body = {
+    //   username: username,
+    // }
 
 
     try {
       //fetches to the api for new user
-      const res = await fetch('/api/new-user', {
+      const res = await fetchJson('/api/login-test', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -59,14 +59,14 @@ export default function EntryForm() {
 
       // call the mutateUser callback function 
       // this should be what creates the session
-      await mutateUser(
-        // fetch the data from the login api with the username in the body of the message
-        fetchJson('/api/login', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(body),
-        })
-      )
+      // await mutateUser(
+      //   // fetch the data from the login api with the username in the body of the message
+      //   fetchJson('/api/login', {
+      //     method: 'POST',
+      //     headers: { 'Content-Type': 'application/json' },
+      //     body: JSON.stringify(body),
+      //   })
+      // )
 
       // call the method for the api
       const json = await res.json()

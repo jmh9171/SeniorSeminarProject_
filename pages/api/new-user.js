@@ -21,12 +21,24 @@ const handler = async (req, res) => {
         })
     }
 
+    const check = await query(
+      `
+        SELECT username, email, FROM users
+        `, [username, email]
+    )
+    if (check) {
+      return res
+        .status(400)
+        .json({
+          message: 'Email or Username already in use'
+        })
+    }
+
     const results = await query(
       `
-          INSERT INTO users (username, password)
-          VALUES (?, ?)
-          `,
-      [username, password]
+        INSERT INTO users (username, passhash, email) VALUES (?,?,?)
+            `,
+      [username, password, email]
     )
 
     return res.json(results)
