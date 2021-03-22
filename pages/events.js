@@ -17,7 +17,7 @@ return(
 
         <center><img src="images/AboutHead.jpg" style={{width: '99%', maxHeight: '800px'}} className="w3-margin-top" /></center>
         <div className="w3-display-middle w3-center">
-          <span className="w3-text-white" style={{fontSize: '90px'}}>Playgroup<br /></span>
+          <span className="w3-text-white" style={{fontSize: '90px'}}>News/Events<br /></span>
         </div>
         <div className="w3-display-bottomright w3-center w3-padding-large">
           <span className="w3-text-white">Img src: pexels.com</span>
@@ -54,11 +54,21 @@ return(
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata" />
         
         {/* Add a background color and large text to the whole page */}
+        
 
         <div className="w3-sand w3-grayscale w3-large">
           {/* About Container */}
           <div className="w3-container" id="about">
             <div className="w3-content" style={{maxWidth: '700px'}}>
+
+            <h5 className="w3-center w3-padding-64"><span className="w3-tag w3-wide">News</span></h5>
+              <h5 className="w3-center w3-padding-24"><span className="w3-wide">Keep up on everything thing Playgroup </span></h5>
+
+              <h5 className="w3-center w3-padding-24"><span className="w3-wide">March 21(12:00pm): Severs will be down for matince </span></h5>
+
+              
+
+
               <h5 className="w3-center w3-padding-64"><span className="w3-tag w3-wide">Events</span></h5>
               <h5 className="w3-center w3-padding-24"><span className="w3-wide">Here is a list of upcoming community events that will be happening over the course of the year on diffrent games. </span></h5>
 

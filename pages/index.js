@@ -75,7 +75,7 @@ return(
           {/* Menu Container */}
           <div className="w3-container" id="menu">
             <div className="w3-content" style={{maxWidth: '1000px'}}>
-            <h5 className="w3-center w3-padding-48"><span className="w3-tag w3-wide">THE MISSION</span></h5>
+          
               
             <div>
               <center><img src="/images/AboutTG.jpg" style={{width: '50%', maxWidth: '500px'}} className="w3-margin-top" /></center>
