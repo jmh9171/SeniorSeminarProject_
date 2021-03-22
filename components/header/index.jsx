@@ -34,6 +34,11 @@ const Header = () => (
           <a>About</a>
         </Link>
       </li>
+      <li className={Styles.header1}>
+        <Link href="/events" >
+          <a>Events</a>
+        </Link>
+      </li>
       <li className={Styles.header2}>
             <h3 className={Styles.titleCard}>PlayGroup</h3>
       </li>

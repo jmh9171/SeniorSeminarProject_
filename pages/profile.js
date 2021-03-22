@@ -5,6 +5,7 @@ import Mainprofile from '../components/mainProfile'
 import Introduction from '../components/Introduction'
 import Profileplaygroups from '../components/profilePlaygroups'
 //import App from '../components/profileTest'
+import Event from '../components/event'
 import React from 'react';
 
 
