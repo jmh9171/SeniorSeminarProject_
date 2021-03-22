@@ -1,13 +1,13 @@
 import React from 'react';
 
-function Testevent() {
+function Testevent(props) {
     return (
       <div>
-        <Eventname eventname="2v2 Tournament"/>
-        <Playgroupname2 playgroupname2="Super cool MC Playgroup #42"/>
-        <Date date="3/20/21" />
-        <Time time="5:30"/>
-        <Eventdescription eventdescription="We will play Minecraft for several hours" />   
+        <Eventname eventname={props.eventname}/>
+        <Playgroupname2 playgroupname2={props.playgroupname2}/>
+        <Date date={props.date} />
+        <Time time={props.time}/>
+        <Eventdescription eventdescription={props.eventdescription} />   
       </div>
     );
   }
@@ -50,14 +50,20 @@ const Event = () => (
   <center>
   <div align="left"style={{maxWidth: '400px', maxHeight: '300px', overflow: 'hidden', overflow: 'auto'}}>
                 <p>
+{/*                   
                       <Eventname eventname="1v1 Tournament"/>
                       <Playgroupname2 playgroupname2="Super cool MC Playgroup #2"/>
                       <Date date="3/19/21" />
                       <Time time="3:30"/>
-                      <Eventdescription eventdescription="We will play Minecraft for 2 hours" />      
-               </p>
-    </div>
+                      <Eventdescription eventdescription="We will play Minecraft for 2 hours" />    
+*/}
 
+                      <Testevent eventname="2v2 tourney" playgroupname2="Testing" date="3/22/21" time="1:30" eventdescription="This is a test description."/>
+               </p>
+               
+               
+    </div>
+          
     </center>
 
     </event>
