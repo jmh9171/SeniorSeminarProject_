@@ -20,11 +20,12 @@ return(
 
 
    
-
+{/* 
     <div>
         Checkbox: <input type="checkbox" id="myCheck" onclick="myFunction()" />
         <p id="text" style={{display: 'none'}}>Checkbox is CHECKED!</p>
-    </div>
+    </div> 
+*/}
 
     <style>{`
         .switch {
