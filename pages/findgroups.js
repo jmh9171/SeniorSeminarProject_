@@ -1,6 +1,4 @@
 import Head from 'next/head'
-import Header from '../components/header'
-import Footer from '../components/footer'
 import Testjs from '../components/testjs'
 
 
@@ -12,7 +10,6 @@ export default function about() {
             <title>Find groups</title>
             <link rel="icon" href="/favicon.ico" />
         </Head>
-        <Header/>
     <div>
             <meta charSet="UTF-8" />
             <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -111,7 +108,7 @@ export default function about() {
             }
           `}</style>
     
-          <Footer/>
+
         </div>
     );
     }

@@ -1,6 +1,4 @@
 import Head from 'next/head'
-import Header from '../components/header'
-import Footer from '../components/footer'
 import Group from '../components/group'
 
 
@@ -11,7 +9,7 @@ return(
         <title>My groups</title>
         <link rel="icon" href="/favicon.ico" />
     </Head>
-    <Header/>
+
 <div>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -67,7 +65,6 @@ return(
         }
       `}</style>
 
-      <Footer/>
     </div>
 );
 }

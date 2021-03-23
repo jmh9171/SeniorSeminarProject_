@@ -1,0 +1,46 @@
+.ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(221, 219, 219);
+}
+.header1{
+    float: right;
+}
+
+.footer1{
+    float: right;
+}
+
+.ul li h3{
+    display: block;
+    color: rgb(48, 48, 48);
+    text-align: center;
+    padding: 2px 25px;
+    text-decoration: none;
+}
+
+
+.header2{
+    float: left;
+}
+
+.footer2{
+    float: left;
+}
+
+.ul li a{
+    display: block;
+    color: rgb(48, 48, 48);
+    text-align: center;
+    padding: 20px 25px;
+    text-decoration: none;
+    transition: all;
+}
+
+
+.ul li a:hover {
+    padding: 23px;
+    background-color: rgb(255, 255, 255);
+}

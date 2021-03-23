@@ -1,6 +1,4 @@
 import Head from 'next/head'
-import Header from '../components/header'
-import Footer from '../components/footer'
 import Mainprofile from '../components/mainProfile'
 import Introduction from '../components/Introduction'
 import Profileplaygroups from '../components/profilePlaygroups'
@@ -16,7 +14,7 @@ export default function about() {
         <title>This is the Profile page</title>
         <link rel="icon" href="/favicon.ico" />
     </Head>
-    <Header/>
+
     
 <meta charSet="UTF-8" />
 <style dangerouslySetInnerHTML={{__html: "\nhtml,body,h1,h2,h3,h4,h5,h6 {font-family: \"Roboto\", sans-serif}\n" }} />
@@ -72,7 +70,6 @@ export default function about() {
 
 
         
-    <Footer/> 
     </div>
 
 );
