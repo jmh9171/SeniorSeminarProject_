@@ -14,7 +14,7 @@ return(
     <div className="bgimg w3-display-container w3-grayscale-min" id="home">
 
     <Head>
-    <Header/> 
+
     
         <title>Chat</title>
         <link rel="icon" href="/favicon.ico" />

@@ -1,6 +1,4 @@
 import Head from 'next/head'
-import Header from '../components/header'
-import Footer from '../components/footer'
 import Event from '../components/event'
 
 
@@ -10,7 +8,6 @@ return(
     <div className="bgimg w3-display-container w3-grayscale-min" id="home">
 
     <Head>
-    <Header/> 
         <title>Welcome to Playgroup</title>
         //Hello
         <link rel="icon" href="/favicon.ico" />
@@ -85,7 +82,7 @@ return(
 
 
           {/* End page content */}
-          <Footer/> 
+
         </div>
         
       </div>
