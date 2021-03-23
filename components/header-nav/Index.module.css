@@ -8,6 +8,11 @@
 .header1{
     float: right;
 }
+
+.footer1{
+    float: right;
+}
+
 .ul li h3{
     display: block;
     color: rgb(48, 48, 48);
@@ -21,6 +26,9 @@
     float: left;
 }
 
+.footer2{
+    float: left;
+}
 
 .ul li a{
     display: block;

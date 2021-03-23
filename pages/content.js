@@ -1,6 +1,7 @@
 import Head from 'next/head'
 
 
+
 export default function hello() {
 return(
     <div>
@@ -27,6 +28,7 @@ return(
           box-sizing: border-box;
         }
       `}</style>
+
     </div>
 );
 }
