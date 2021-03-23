@@ -5,10 +5,11 @@
     overflow: hidden;
     background-color: rgb(221, 219, 219);
 }
-
-
-
 .header1{
+    float: right;
+}
+
+.footer1{
     float: right;
 }
 
@@ -25,6 +26,9 @@
     float: left;
 }
 
+.footer2{
+    float: left;
+}
 
 .ul li a{
     display: block;

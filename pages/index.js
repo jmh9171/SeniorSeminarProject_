@@ -1,203 +1,136 @@
 import Head from 'next/head'
+import Header from '../components/header'
+import Footer from '../components/footer'
 
-export default function Home() {
-  return (
-    <div className="container">
-      <Head>
-        <title>Login or Create Account</title>
+
+
+export default function about() {
+return(
+  
+    <div className="bgimg w3-display-container w3-grayscale-min" id="home">
+
+    <Head>
+    <Header/> 
+        <title>Welcome to Playgroup</title>
+        //Hello
         <link rel="icon" href="/favicon.ico" />
-      </Head>
-      
-      <main>
-        <h1 className="title">
-          Welcome to <a href="content">Next.js!</a>
-          //test
-          //this is another test
-          //hi
-        </h1>
 
-        <p className="description">
-          Get started by editing <code>pages/index.js</code>
-        </p>
-
-        <h1>
-          <a href="/loginPage">This will take you to the login page</a>
-        </h1>
-
-        <div className="grid">
-          <a href="https://nextjs.org/docs" className="card">
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className="card">
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className="card"
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="card"
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+        <center><img src="images/Mainslide.jpg" style={{width: '99%', maxHeight: '800px'}} className="w3-margin-top" /></center>
+        <div className="w3-display-middle w3-center">
+          <span className="w3-text-white" style={{fontSize: '90px'}}>Playgroup<br /></span>
         </div>
-      </main>
+        <div className="w3-display-bottomright w3-center w3-padding-large">
+          <span className="w3-text-white">Img src: pexels.com</span>
+        </div>
 
-      <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className="logo" />
-        </a>
-      </footer>
+        
+    </Head> 
 
-      <style jsx>{`
-        .container {
-          min-height: 100vh;
-          padding: 0 0.5rem;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
 
-        main {
-          padding: 5rem 0;
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
+ <style jsx>{`
 
-        footer {
-          width: 100%;
-          height: 100px;
-          border-top: 1px solid #eaeaea;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
+    body, html {
+      height: 100%;
+      font-family: "Inconsolata", sans-serif;
+    }
+    
+    .bgimg {
+      background-position: center;
+      background-size: cover;
+      background-image: url("/images/AboutHead.jpg");
+      min-height: 75%;
+    }
+    
+    .menu {
+      display: none;
+    }
 
-        footer img {
-          margin-left: 0.5rem;
-        }
+            `}</style>
 
-        footer a {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
+    <div>
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata" />
+        
+        {/* Add a background color and large text to the whole page */}
 
-        a {
-          color: inherit;
-          text-decoration: none;
-        }
+        <div className="w3-sand w3-grayscale w3-large">
+          {/* Main Container */}
+          <div className="w3-container" id="about">
+            <div className="w3-content" style={{maxWidth: '700px'}}>
+              <h5 className="w3-center w3-padding-64"><span className="w3-tag w3-wide">ABOUT PLAYGROUP</span></h5>
+              <p> Welcome to the playgroup where we try to cutomize your gaming experience for maximume fun </p>
+             
+              <div className="w3-panel w3-leftbar w3-light-grey">
 
-        .title a {
-          color: #0070f3;
-          text-decoration: none;
-        }
+              </div>
+            </div>
+          </div>
+          
 
-        .title a:hover,
-        .title a:focus,
-        .title a:active {
-          text-decoration: underline;
-        }
 
-        .title {
-          margin: 0;
-          line-height: 1.15;
-          font-size: 5rem;
-        }
 
-        .title,
-        .description {
-          text-align: center;
-        }
 
-        .description {
-          line-height: 1.5;
-          font-size: 1.5rem;
-        }
+          {/* Menu Container */}
+          <div className="w3-container" id="menu">
+            <div className="w3-content" style={{maxWidth: '1000px'}}>
+          
+              
+            <div>
+              <center><img src="/images/AboutTG.jpg" style={{width: '50%', maxWidth: '500px'}} className="w3-margin-top" /></center>
+              <center><h3><p>Learn more about our site by heading to the about page</p><br /></h3></center>
+             
 
-        code {
-          background: #fafafa;
-          border-radius: 5px;
-          padding: 0.75rem;
-          font-size: 1.1rem;
-          font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-        }
+            </div>
+            <div>
+              <center><img src="/images/NewsTG.jpg" style={{width: '50%', maxWidth: '500px'}} className="w3-margin-top" /></center>
+              <center><h3><p>Keep up to date on all things GroupPlay on our site news tab</p><br /></h3></center>
+             
 
-        .grid {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-wrap: wrap;
+            </div>
 
-          max-width: 800px;
-          margin-top: 3rem;
-        }
 
-        .card {
-          margin: 1rem;
-          flex-basis: 45%;
-          padding: 1.5rem;
-          text-align: left;
-          color: inherit;
-          text-decoration: none;
-          border: 1px solid #eaeaea;
-          border-radius: 10px;
-          transition: color 0.15s ease, border-color 0.15s ease;
-        }
+            <div>
+              <center><img src="/images/EventsTG.jpg" style={{width: '50%', maxWidth: '500px'}} className="w3-margin-top" /></center>
+              <center><h3><p>FInd out about new and exitining events that are open to every one</p><br /></h3></center>
+             
 
-        .card:hover,
-        .card:focus,
-        .card:active {
-          color: #0070f3;
-          border-color: #0070f3;
-        }
+            </div>
 
-        .card h3 {
-          margin: 0 0 1rem 0;
-          font-size: 1.5rem;
-        }
+            <div>
+              <center><img src="/images/JustchattingTG.jpg" style={{width: '50%', maxWidth: '500px'}} className="w3-margin-top" /></center>
+              <center><h3><p>Find a group to go and play your favorite games</p><br /></h3></center>
+             
 
-        .card p {
-          margin: 0;
-          font-size: 1.25rem;
-          line-height: 1.5;
-        }
+            </div>
 
-        .logo {
-          height: 1em;
-        }
 
-        @media (max-width: 600px) {
-          .grid {
-            width: 100%;
-            flex-direction: column;
-          }
-        }
-      `}</style>
+             
+            <div className="w3-container" id="about">
 
-      <style jsx global>{`
+    
+
+
+
+            </div>
+             
+
+
+
+
+            </div>
+          </div>
+          {/* End page content */}
+          <Footer/> 
+        </div>
+        
+      </div>
+
+
+   
+
+    <style jsx global>{`
         html,
         body {
           padding: 0;
@@ -211,6 +144,9 @@ export default function Home() {
           box-sizing: border-box;
         }
       `}</style>
+
+
     </div>
-  )
+
+);
 }

@@ -1,6 +1,9 @@
 import Head from 'next/head'
 import Header from '../components/header'
 import Footer from '../components/footer'
+import Group from '../components/group'
+import EntryForm from '../components/entry-form'
+import button from '../components/button'
 import Picturehead from '../components/picturehead'
 import Aboutplaygroup from '../components/aboutplaygroup'
 import Themission from '../components/themission'
@@ -15,9 +18,8 @@ return(
     <Head>
     <Header/> 
     
-        <title>About Us</title>
+        <title>Chat</title>
         <link rel="icon" href="/favicon.ico" />
-        <Picturehead/>
 
         
     </Head> 
@@ -50,11 +52,48 @@ return(
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata" />
         
         {/* Add a background color and large text to the whole page */}
+        <div className="w3-grey w3-grayscale w3-large">
+            
+            {/* Menu Container */}
+            <div className="w3-container" id="menu">
+                    <div className="w3-content" style={{maxWidth: '1500px'}}>
+                    <h5 className="w3-center w3-padding-48"><span className="w3-tag w3-wide">Group chat</span></h5>
 
-        <div className="w3-sand w3-grayscale w3-large">
 
-          <Aboutplaygroup/>
-          <Themission/>
+                    
+<div className="w3-left" style={{maxWidth: '500px', borderStyle: 'hidden', maxHeight: '600px', overflow: 'hidden', overflow: 'auto'}}>
+      <Group/>
+      <Group/>
+      <Group/>
+      <Group/>
+      <Group/>
+      <Group/>
+      <Group/>
+      <Group/>
+      <Group/>
+      <Group/>
+      <Group/>
+      <Group/>
+      <Group/>
+      <Group/>
+      <Group/>
+      <Group/>
+      <Group/>
+       
+</div>
+
+
+<div className="w3-center" style={{maxWidth: '500px', borderStyle: 'dotted', maxHeight: '600px', overflow: 'hidden', overflow: 'auto'}}>
+      <EntryForm/>
+      
+       
+</div>
+
+
+
+                    </div>
+                </div>
+
 
           {/* End page content */}
           <Footer/> 

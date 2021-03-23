@@ -11,6 +11,21 @@
   "dependencies": {
     "next": "^10.0.0",
     "react": "17.0.1",
-    "react-dom": "17.0.1"
-  }
+    "react-dom": "17.0.1",
+    "mysql": "2.18.1"
+  },
+  "description": "This is a starter template for [Learn Next.js](https://nextjs.org/learn).",
+  "main": "server.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jmh9171/nextjs-blog.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jmh9171/nextjs-blog/issues"
+  },
+  "homepage": "https://github.com/jmh9171/nextjs-blog#readme"
 }
