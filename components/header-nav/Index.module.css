@@ -35,12 +35,11 @@
     color: rgb(48, 48, 48);
     text-align: center;
     padding: 20px 25px;
-    text-decoration: none;
-    transition: all;
+    text-decoration: wavy;
 }
 
 
 .ul li a:hover {
-    padding: 23px;
+
     background-color: rgb(255, 255, 255);
 }

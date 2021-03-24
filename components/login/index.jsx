@@ -15,6 +15,8 @@ import fetchJson from '../../lib/fetchJson'
 //component that is returned
 export default function EntryForm() {
 
+  
+
   // from here is the new code
   // import mutateUser from useUser, have to do it in {} because 
   // it is not the default export. Set settings for object
@@ -24,7 +26,7 @@ export default function EntryForm() {
     redirectIfFound: true,
   })
   //create an 'errorMsg' stateful value and a function to change it
-  const [errorMsg, setErrorMsg] = useState('')
+  const [errorMsg, setErrorMsg] = useState(false)
   // to here
 
   //stateful variables and their set methods
@@ -37,12 +39,14 @@ export default function EntryForm() {
 
     // create a json object that holds the username you input
     // get the username from the event of the submit button
-    // const body = {
-    //   username: username,
-    // }
+    const body = {
+      username: username,
+    }
 
 
     try {
+
+
       //fetches to the api for new user
       const res = await fetchJson('/api/login-test', {
         method: 'POST',
@@ -57,26 +61,26 @@ export default function EntryForm() {
       })
 
 
-      // call the mutateUser callback function 
-      // this should be what creates the session
-      // await mutateUser(
-      //   // fetch the data from the login api with the username in the body of the message
-      //   fetchJson('/api/login', {
-      //     method: 'POST',
-      //     headers: { 'Content-Type': 'application/json' },
-      //     body: JSON.stringify(body),
-      //   })
-      // )
+
 
       // call the method for the api
-      const json = await res.json()
+      const json = await res.json;
+      // call the mutateUser callback function 
+      // this should be what creates the session
 
-      //if the response is okay push a path to the router
-      if (!res.ok) {
-        console.log(json.message)
-      }
+
+      await mutateUser(
+        // fetch the data from the login api with the username in the body of the message
+        fetchJson('/api/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(body),
+        })
+      )
+
     } catch (e) {
-      console.log(e.message)
+      errorMsg.setErrorMsg(true)
+      console.log(error, e)
     }
   }
 
@@ -88,6 +92,7 @@ export default function EntryForm() {
           <img src="../../images/blankP.png" alt="Avatar" className={Styles.avatar} />
         </div>
         <div className={Styles.container}>
+          {errorMsg ? <a>No matching username</a>: <></>}
           <label htmlFor="uname"><b>Username</b></label>
           <input
             className={Styles.input}
