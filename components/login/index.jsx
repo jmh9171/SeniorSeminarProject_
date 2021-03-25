@@ -15,7 +15,7 @@ import fetchJson from '../../lib/fetchJson'
 //component that is returned
 export default function EntryForm() {
 
-  
+
 
   // from here is the new code
   // import mutateUser from useUser, have to do it in {} because 
@@ -64,11 +64,11 @@ export default function EntryForm() {
 
 
       // call the method for the api
-      const json = await res.json;
+      const json = await res;
       // call the mutateUser callback function 
       // this should be what creates the session
 
-
+      // for setting the client side cookies
       await mutateUser(
         // fetch the data from the login api with the username in the body of the message
         fetchJson('/api/login', {
@@ -77,22 +77,23 @@ export default function EntryForm() {
           body: JSON.stringify(body),
         })
       )
-
+      // if there is a bad status code, an error is thrown.
     } catch (e) {
-      errorMsg.setErrorMsg(true)
-      console.log(error, e)
+      if (e.message === "Unauthorized") {
+        setErrorMsg("Unauthorized")
+      }
     }
   }
 
-  return (
-    <>
-      <h1>This is the Login Page</h1>
+  if (errorMsg === "Unauthorized") {
+    return (<>
+      <h1></h1>
       <form className={Styles.form} onSubmit={submitHandler}>
         <div className={Styles.imgcontainer}>
+          <p>Username or Password does not match</p>
           <img src="../../images/blankP.png" alt="Avatar" className={Styles.avatar} />
         </div>
         <div className={Styles.container}>
-          {errorMsg ? <a>No matching username</a>: <></>}
           <label htmlFor="uname"><b>Username</b></label>
           <input
             className={Styles.input}
@@ -114,13 +115,54 @@ export default function EntryForm() {
           <button className={Styles.button} type="submit">Login</button>
           <label>
             <input type="checkbox" defaultChecked="checked" name="remember" /> Remember me
-            </label>
+        </label>
         </div>
         <div className={Styles.container} style={{ backgroundColor: '#f1f1f1' }}>
           <button type="button" className={Styles.cancelbtn}>Cancel</button>
           <span className={Styles.psw}>Forgot <a href="#">password?</a></span>
         </div>
       </form>
-    </>
-  )
+
+    </>)
+  } else {
+    return (
+      <>
+        <h1></h1>
+        <form className={Styles.form} onSubmit={submitHandler}>
+          <div className={Styles.imgcontainer}>
+            <img src="../../images/blankP.png" alt="Avatar" className={Styles.avatar} />
+          </div>
+          <div className={Styles.container}>
+            <label htmlFor="uname"><b>Username</b></label>
+            <input
+              className={Styles.input}
+              type="text"
+              placeholder="Enter Username"
+              name="uname" required
+              value={username}
+              onChange={(e) => setUname(e.target.value)}
+            />
+            <label htmlFor="psw"><b>Password</b></label>
+            <input
+              className={Styles.input}
+              type="password"
+              placeholder="Enter Password"
+              name="psw"
+              value={password}
+              onChange={(e) => setPword(e.target.value)}
+            />
+            <button className={Styles.button} type="submit">Login</button>
+            <label>
+              <input type="checkbox" defaultChecked="checked" name="remember" /> Remember me
+              </label>
+          </div>
+          <div className={Styles.container} style={{ backgroundColor: '#f1f1f1' }}>
+            <button type="button" className={Styles.cancelbtn}>Cancel</button>
+            <span className={Styles.psw}>Forgot <a href="#">password?</a></span>
+          </div>
+        </form>
+      </>
+    )
+  }
 }
+

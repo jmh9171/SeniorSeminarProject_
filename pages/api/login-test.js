@@ -24,7 +24,7 @@ const handler = async (req, res) => {
 
         // the query to see if the username is already taken 
         const results = await query(
-            `SELECT username, passhash FROM users WHERE username = ?`,
+            `SELECT passhash FROM users WHERE username = ?`,
             [username]
         )
 
@@ -32,10 +32,19 @@ const handler = async (req, res) => {
         // if there is no first element, there were no results
         if (results[0]) {
             console.log(results[0])
-            return res.status(200)
-                .json({
-                    message: results
-                })
+            if (password === results[0].passhash) {
+                console.log("Match")
+                return res.status(200)
+                    .json({
+                        message: results
+                    })
+            } else {
+                return res.status(401)
+                    .json({
+                        message: 'No matching username or password'
+                    })
+            }
+
         }
 
         // else, return a status 400 response, indicating no match
