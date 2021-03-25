@@ -2,9 +2,9 @@ import Link from 'next/link'
 import Styles from './index.module.css'
 import useUser from '../../lib/useUser'
 import React from 'react'
-import Router from 'next/router'
 import { useRouter } from 'next/router'
 import fetchJson from '../../lib/fetchJson'
+
 
 export default function Header() {
   /** Basic description of how scoping of pages with authentication works:
@@ -19,6 +19,8 @@ export default function Header() {
   const { user, mutateUser } = useUser({ redirectTo: '/loginPage' })
   const router = useRouter()
 
+
+
   if (!user || user.isLoggedIn === false) {
     return (
       <header>
@@ -29,7 +31,7 @@ export default function Header() {
             </Link>
           </li>
           <li className={Styles.header1}>
-            <Link href="/new-user" >
+            <Link href="/new-user">
               <a>Create Account</a>
             </Link>
           </li>

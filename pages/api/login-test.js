@@ -2,37 +2,60 @@ import {
     query
 } from '../../lib/db'
 /**
- * @param  {} req
- * @param  {} res
+ * @param  {} req - request
+ * @param  {} res - response
  */
 const handler = async (req, res) => {
-
+    // pull the username and password from the request body message
     const {
         username,
         password
     } = req.body
+
     try {
+        // check if there is a username and password
         if (!username || !password) {
-            return res
-                .status(400)
+            // if not return a message 
+            return res.status(400)
                 .json({
-                    message: 'Must supply a `username`, `password` and `email`'
+                    message: 'Must supply a `username` and `password`'
                 })
         }
 
-
+        // the query to see if the username is already taken 
         const results = await query(
-            `
-        INSERT INTO users (username, passhash, email) VALUES (?,?,?)
-            `,
-            [username, password, "email@email.com"]
+            `SELECT passhash FROM users WHERE username = ?`,
+            [username]
         )
 
-        return res.json(results)
+        // if the resulting object contains anything, the first element will be filled.
+        // if there is no first element, there were no results
+        if (results[0]) {
+            if (password === results[0].passhash) {
+                return res.status(200)
+                    .json({
+                        message: results
+                    })
+            } else {
+                return res.status(401)
+                    .json({
+                        message: 'No matching username or password'
+                    })
+            }
+        }
+
+        // else, return a status 400 response, indicating no match
+        return res.status(401)
+            .json({
+                message: 'No matching username or password'
+            })
+
     } catch (e) {
-        res.status(500).json({
-            message: e.message
-        })
+        //console.log(e.message)
+        return res.status(500)
+            .json({
+                message: e.message
+            })
     }
 }
 export default handler

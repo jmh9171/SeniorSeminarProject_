@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Mainprofile from '../components/mainProfile'
 import Introduction from '../components/Introduction'
-import Profileplaygroups from '../components/profilePlaygroups'
+import Profileplaygroups from '../components/ProfilePlaygroups'
 //import App from '../components/profileTest'
 import Event from '../components/event'
 import React from 'react';
@@ -11,15 +11,15 @@ export default function about() {
   return (
     <div>
       <Head>
-        <title>This is the Profile page</title>
+        <title>Profile</title>
         <link rel="icon" href="/favicon.ico" />
-    </Head>
+      </Head>
 
-    
-<meta charSet="UTF-8" />
-<style dangerouslySetInnerHTML={{__html: "\nhtml,body,h1,h2,h3,h4,h5,h6 {font-family: \"Roboto\", sans-serif}\n" }} />
 
-    <div>
+      <meta charSet="UTF-8" />
+      <style dangerouslySetInnerHTML={{ __html: "\nhtml,body,h1,h2,h3,h4,h5,h6 {font-family: \"Roboto\", sans-serif}\n" }} />
+
+      <div>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
@@ -28,22 +28,22 @@ export default function about() {
       </div>
 
 
- {/* Page Container */}
- <div className="w3-content w3-margin-top" style={{maxWidth: '1400px'}}>
+      {/* Page Container */}
+      <div className="w3-content w3-margin-top" style={{ maxWidth: '1400px' }}>
         {/* The Grid */}
         <div className="w3-row-padding">
 
-          <Mainprofile/>
+          <Mainprofile></Mainprofile>
 
           {/* Right Column */}
           <div className="w3-twothird">
-      
-            <Introduction/>   
-            <Profileplaygroups/>
+
+            <Introduction></Introduction> 
+            <Profileplaygroups></Profileplaygroups>
 
             {/* End Right Column */}
           </div>
- 
+
 
           {/* End Grid */}
         </div>
@@ -51,9 +51,9 @@ export default function about() {
       </div>
 
 
-    
-  
-    <style jsx global>{`
+
+
+      <style jsx global>{`
         html,
         body {
           padding: 0;
@@ -69,8 +69,8 @@ export default function about() {
       `}</style>
 
 
-        
+
     </div>
 
-);
+  );
 }

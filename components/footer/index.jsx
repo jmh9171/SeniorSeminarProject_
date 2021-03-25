@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Styles from '../Index.module.css'
 
+
 const Footer = () => (
   <footer className="w3-container w3-black w3-center w3-margin-top">
 

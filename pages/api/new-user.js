@@ -22,26 +22,27 @@ const handler = async (req, res) => {
     }
 
     const check = await query(
-      `
-        SELECT username, email, FROM users
-        `, [username, email]
+      `SELECT username email FROM users WHERE username = ? AND email = ?`,
+      [username, email]
     )
-    if (check) {
+
+    if (check[0]) {
       return res
-        .status(400)
+        .status(401)
         .json({
           message: 'Email or Username already in use'
         })
     }
 
+
     const results = await query(
-      `
-        INSERT INTO users (username, passhash, email) VALUES (?,?,?)
-            `,
+      `INSERT INTO users (username, passhash, email) VALUES (?,?,?)`,
       [username, password, email]
     )
 
-    return res.json(results)
+    return res.status(200)
+      .json(results)
+
   } catch (e) {
     res.status(500).json({
       message: e.message
