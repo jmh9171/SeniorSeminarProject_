@@ -15,9 +15,6 @@ import fetchJson from '../../lib/fetchJson'
 //component that is returned
 export default function EntryForm() {
 
-
-
-  // from here is the new code
   // import mutateUser from useUser, have to do it in {} because 
   // it is not the default export. Set settings for object
   const { mutateUser } = useUser({
@@ -43,10 +40,7 @@ export default function EntryForm() {
       username: username,
     }
 
-
     try {
-
-
       //fetches to the api for new user
       const res = await fetchJson('/api/login-test', {
         method: 'POST',
@@ -59,9 +53,6 @@ export default function EntryForm() {
           password,
         }),
       })
-
-
-
 
       // call the method for the api
       const json = await res;
@@ -79,12 +70,14 @@ export default function EntryForm() {
       )
       // if there is a bad status code, an error is thrown.
     } catch (e) {
+      // if the password is not matching, an unauthorized error is thrown
+      // set error message state
       if (e.message === "Unauthorized") {
         setErrorMsg("Unauthorized")
       }
     }
   }
-
+  // check the error message state
   if (errorMsg === "Unauthorized") {
     return (<>
       <h1></h1>
@@ -122,7 +115,6 @@ export default function EntryForm() {
           <span className={Styles.psw}>Forgot <a href="#">password?</a></span>
         </div>
       </form>
-
     </>)
   } else {
     return (
