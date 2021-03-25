@@ -23,7 +23,7 @@ export default function EntryForm() {
     redirectIfFound: true,
   })
   //create an 'errorMsg' stateful value and a function to change it
-  const [errorMsg, setErrorMsg] = useState(false)
+  const [errorMsg, setErrorMsg] = useState('')
   // to here
 
   //stateful variables and their set methods
@@ -72,9 +72,7 @@ export default function EntryForm() {
     } catch (e) {
       // if the password is not matching, an unauthorized error is thrown
       // set error message state
-      if (e.message === "Unauthorized") {
-        setErrorMsg("Unauthorized")
-      }
+      setErrorMsg(e.message)
     }
   }
   // check the error message state
