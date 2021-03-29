@@ -8,6 +8,7 @@ const Creategroupform = () => (
             <label htmlFor="gname">Group Name</label>
             <input type="text" id="gname" name="groupname" placeholder="Group name.." />
             
+{/*             
             <label htmlFor="tag1">Tag #1</label>
             <select id="tag1" name="tag1">
               <option value="fps">FPS</option>
@@ -33,7 +34,8 @@ const Creategroupform = () => (
               <option value="casual">CASUAL</option>
               <option value="competitive">COMPETITIVE</option>
               <option value="racing">RACING</option>
-            </select>
+            </select> 
+*/}
 
 
 
@@ -42,6 +44,7 @@ const Creategroupform = () => (
             <textarea id="description" name="description" placeholder="Write something about your group.." style={{height: '200px'}} defaultValue={""} />
             <input type="submit" defaultValue="Submit" style={{color: "white"}}/>
           </form>
+
         </div>
 </div>
 
@@ -73,7 +76,7 @@ const Creategroupform = () => (
        }
        
        input[type=submit]:hover {
-         background-color: #45a049;
+         background-color: #white;
        }
        
        .container {
