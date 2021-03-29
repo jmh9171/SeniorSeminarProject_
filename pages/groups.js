@@ -43,9 +43,14 @@ return(
 
         
   </div>
+
+    
+
 </center> 
 
-        </div>
+<p style={{fontSize: "50px", color: "white"}}><a href="/creategroup">Create Group</a></p>
+
+    </div>
 
 
 
