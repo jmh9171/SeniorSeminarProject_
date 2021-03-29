@@ -7,16 +7,18 @@ import Themission from '../components/themission'
 
 export default function about() {
   return (
+ 
 
     <div className="bgimg w3-display-container w3-grayscale-min" id="home">
       <Head>
         <title>About Us</title>
         <link rel="icon" href="/favicon.ico" />
-        <Picturehead />
+        
       </Head>
 
 
 
+      <Picturehead/>
       <style jsx>{`
 
     body, html {
@@ -44,8 +46,9 @@ export default function about() {
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata" />
 
         {/* Add a background color and large text to the whole page */}
-
+       
         <div className="w3-sand w3-grayscale w3-large">
+       
 
           <Aboutplaygroup />
           <Themission />
