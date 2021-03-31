@@ -1,3 +1,11 @@
+
+import React from 'react';
+import ReactDOM from "react-dom";
+import Addlabel from '../addlabel';
+import Addlabel1 from '../test';
+
+
+
 const Creategroupform = () => (
     <creategroupform>
    
@@ -7,8 +15,13 @@ const Creategroupform = () => (
           <form action="/action_page.php">
             <label htmlFor="gname">Group Name</label>
             <input type="text" id="gname" name="groupname" placeholder="Group name.." />
-            
-            
+{/*             
+            <script src="test.js"></script> 
+*/}
+
+<Addlabel1/>
+
+
 {/*             
             <label htmlFor="tag1">Tag #1</label>
             <select id="tag1" name="tag1">
@@ -48,6 +61,10 @@ const Creategroupform = () => (
 
         </div>
 </div>
+
+
+
+
 
 
 
