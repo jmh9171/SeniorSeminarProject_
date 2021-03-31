@@ -41,31 +41,20 @@ export default function EntryForm() {
     }
 
     try {
-      //fetches to the api for new user
-      const res = await fetchJson('/api/login-test', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        //add the username and password to the body of the request in the form of json
-        body: JSON.stringify({
-          username,
-          password,
-        }),
-      })
-
-      // call the method for the api
-      const json = await res;
+      // // call the method for the api
       // call the mutateUser callback function 
       // this should be what creates the session
 
       // for setting the client side cookies
-      await mutateUser(
+      const user = await mutateUser(
         // fetch the data from the login api with the username in the body of the message
-        fetchJson('/api/login', {
+        fetchJson('/api/login-test', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(body),
+          body: JSON.stringify({
+            username,
+            password,
+          }),
         })
       )
       // if there is a bad status code, an error is thrown.

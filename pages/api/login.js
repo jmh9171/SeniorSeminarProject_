@@ -7,23 +7,15 @@ export default withSession(async (req, res) => {
   const {
     username
   } = await req.body
-  // hard coded url
-  const url = `https://api.github.com/users/${username}`
+  // hard coded ur
 
   try {
-
-    // we check that the user exists on GitHub and store some data in session
-    // fetch the json from the url and store the url of the avatar img
-    const {
-      login,
-      avatar_url: avatarUrl
-    } = await fetchJson(url)
     // create a user object with url information
     const user = {
       isLoggedIn: true,
-      login,
-      avatarUrl
+      username: username,
     }
+    console.log("here")
     // set the cookie and call it user on the backend
     req.session.set('user', user)
     await req.session.save()

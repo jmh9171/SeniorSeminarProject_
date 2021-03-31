@@ -8,10 +8,10 @@ function MyApp({ Component, pageProps }) {
     <>
       <HeaderNav />
       <Component {...pageProps} />
-      <h1>This is on the _app Page</h1>
       <Footer />
     </>
   )
 }
 
 export default MyApp
+//SELECT user.username, playgroup.name FROM user INNER JOIN member ON user.user_id=member.user_id INNER JOIN playgroup ON member.playgroup_id=playgroup.playgroup_id

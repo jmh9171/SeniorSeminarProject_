@@ -1,22 +1,16 @@
 import {
     query
 } from '../../lib/db'
-import withSession from '../../lib/session'
 /**
  * @param  {} req - request
  * @param  {} res - response
  */
-export default withSession(async (req, res) => {
+const handler = async (req, res) => {
     // pull the username and password from the request body message
     const {
         username,
         password
     } = req.body
-
-    const user = {
-        isLoggedIn: true,
-        username: username,
-    }
 
     try {
         // check if there is a username and password
@@ -38,8 +32,6 @@ export default withSession(async (req, res) => {
         // if there is no first element, there were no results
         if (results[0]) {
             if (password === results[0].passhash) {
-                req.session.set('user', user)
-                await req.session.save()
                 return res.status(200)
                     .json({
                         message: results
@@ -65,4 +57,5 @@ export default withSession(async (req, res) => {
                 message: e.message
             })
     }
-})
+}
+export default handler
