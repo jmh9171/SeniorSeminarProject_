@@ -8,6 +8,7 @@ const Creategroupform = () => (
             <label htmlFor="gname">Group Name</label>
             <input type="text" id="gname" name="groupname" placeholder="Group name.." />
             
+            
 {/*             
             <label htmlFor="tag1">Tag #1</label>
             <select id="tag1" name="tag1">
@@ -35,7 +36,7 @@ const Creategroupform = () => (
               <option value="competitive">COMPETITIVE</option>
               <option value="racing">RACING</option>
             </select> 
-*/}
+ */}
 
 
 
