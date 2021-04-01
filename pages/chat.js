@@ -84,10 +84,11 @@ return(
 
 
 <div className="w3-center" style={{maxWidth: '500px', borderStyle: 'dotted', maxHeight: '600px', overflow: 'hidden', overflow: 'auto'}}>
-      <EntryForm/>
-      
+      {/* 
+          Put html here
+      */}
        
-</div>
+</div> 
 
 
 
