@@ -1,6 +1,4 @@
 import Head from 'next/head'
-import Header from '../components/header'
-import Footer from '../components/footer'
 import Group from '../components/group'
 import EntryForm from '../components/entry-form'
 import button from '../components/button'
@@ -16,7 +14,7 @@ return(
     <div className="bgimg w3-display-container w3-grayscale-min" id="home">
 
     <Head>
-    <Header/> 
+
     
         <title>Chat</title>
         <link rel="icon" href="/favicon.ico" />
@@ -97,7 +95,7 @@ return(
 
 
           {/* End page content */}
-          <Footer/> 
+
 
         </div>
         

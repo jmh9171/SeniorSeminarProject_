@@ -3,20 +3,28 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev_1": "node server.js",
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "dbTest": "node dbTesting.js",
+    "migrate": "node scripts/migrate-db.js"
   },
   "dependencies": {
+    "clsx": "^1.1.1",
+    "cookie": "^0.4.1",
+    "dotenv": "^8.2.0",
+    "js-cookie": "^2.2.1",
     "next": "^10.0.0",
+    "next-iron-session": "^4.1.12",
     "react": "17.0.1",
+    "react-cookie": "^4.0.3",
     "react-dom": "17.0.1",
-    "mysql": "2.18.1"
+    "react-loading-skeleton": "^2.1.1",
+    "serverless-mysql": "^1.5.4",
+    "swr": "^0.3.11"
   },
   "description": "This is a starter template for [Learn Next.js](https://nextjs.org/learn).",
   "main": "server.js",
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jmh9171/nextjs-blog.git"

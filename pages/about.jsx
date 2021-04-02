@@ -1,6 +1,4 @@
 import Head from 'next/head'
-import Header from '../components/header'
-import Footer from '../components/footer'
 import Picturehead from '../components/picturehead'
 import Aboutplaygroup from '../components/aboutplaygroup'
 import Themission from '../components/themission'
@@ -8,22 +6,20 @@ import Themission from '../components/themission'
 
 
 export default function about() {
-return(
-  
-    <div className="bgimg w3-display-container w3-grayscale-min" id="home">
+  return (
+ 
 
-    <Head>
-    <Header/> 
-    
+    <div className="bgimg w3-display-container w3-grayscale-min" id="home">
+      <Head>
         <title>About Us</title>
         <link rel="icon" href="/favicon.ico" />
-        <Picturehead/>
-
         
-    </Head> 
+      </Head>
 
 
- <style jsx>{`
+
+      <Picturehead/>
+      <style jsx>{`
 
     body, html {
       height: 100%;
@@ -43,30 +39,30 @@ return(
 
             `}</style>
 
-    <div>
+      <div>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata" />
-        
+
         {/* Add a background color and large text to the whole page */}
-
+       
         <div className="w3-sand w3-grayscale w3-large">
+       
 
-          <Aboutplaygroup/>
-          <Themission/>
+          <Aboutplaygroup />
+          <Themission />
 
           {/* End page content */}
-          <Footer/> 
 
         </div>
-        
+
       </div>
 
 
-   
 
-    <style jsx global>{`
+
+      <style jsx global>{`
         html,
         body {
           padding: 0;
@@ -84,5 +80,5 @@ return(
 
     </div>
 
-);
+  );
 }
