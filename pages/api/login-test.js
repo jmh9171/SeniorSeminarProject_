@@ -13,11 +13,6 @@ export default withSession(async (req, res) => {
         password
     } = req.body
 
-    const user = {
-        isLoggedIn: true,
-        username: username,
-    }
-
     try {
         // check if there is a username and password
         if (!username || !password) {
@@ -26,6 +21,13 @@ export default withSession(async (req, res) => {
                 .json({
                     message: 'Must supply a `username` and `password`'
                 })
+        }
+
+
+
+        const user = {
+            isLoggedIn: true,
+            username: username,
         }
 
         // the query to see if the username is already taken 
@@ -45,6 +47,7 @@ export default withSession(async (req, res) => {
                         message: results
                     })
             } else {
+
                 return res.status(401)
                     .json({
                         message: 'No matching username or password'
@@ -59,7 +62,7 @@ export default withSession(async (req, res) => {
             })
 
     } catch (e) {
-        //console.log(e.message)
+        console.log(e.message)
         return res.status(500)
             .json({
                 message: e.message

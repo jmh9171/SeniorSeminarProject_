@@ -78,15 +78,12 @@ export default function about(props) {
           box-sizing: border-box;
         }
       `}</style>
-
-
-
     </div>
 
   );
 }
 
-export async function getServerSideProps({req}) {
+export async function getServerSideProps({ req }) {
   //TODO
   return {
     props: { nameOfUser: "response.username" }, // will be passed to the page component as props

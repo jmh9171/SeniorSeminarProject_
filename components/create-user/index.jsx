@@ -27,46 +27,26 @@ export default function createUserForm() {
     // callback method for when submit button is pressed
     async function submitHandler(e) {
         e.preventDefault()
-
-        // create a json object that holds the username you input
-        // get the username from the event of the submit button
-        const body = {
-            username: username,
-        }
-
-
         try {
             //fetches to the api for new user
-            const res = await fetch('/api/new-user', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                //add the username and password to the body of the request in the form of json
-                body: JSON.stringify({
-                    email,
-                    username,
-                    password,
-                }),
-            })
-
-            // call the method for the api
-            const response = await res
+            const res = await mutateUser(
+                fetchJson('/api/new-user', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    //add the username and password to the body of the request in the form of json
+                    body: JSON.stringify({
+                        email,
+                        username,
+                        password,
+                    }),
+                }))
 
             // if the status code from the response is not 'OK' throw an unauthorized error
             if (response.status != 200) {
                 throw { message: "Unauthorized" }
             }
-            // call the mutateUser callback function 
-            // this should be what creates the session
-            await mutateUser(
-                // fetch the data from the login api with the username in the body of the message
-                fetchJson('/api/login', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(body),
-                })
-            )
             // catch the error thrown, if there is one
         } catch (e) {
             // set the error message state to the message
@@ -79,7 +59,7 @@ export default function createUserForm() {
                 <h1></h1>
                 <form className={Styles.form} onSubmit={submitHandler}>
                     <div className={Styles.imgcontainer}>
-                        <p>Username or email already in use</p>
+                        <p>{errorMsg}</p>
                         <img src="../../images/blankP.png" alt="Avatar" className={Styles.avatar} />
                     </div>
                     <div className={Styles.container}>
