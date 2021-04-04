@@ -3,11 +3,15 @@ import Addlabel from '../addlabel';
 import React from 'react';
 import ReactDOM from "react-dom";
 
+
 class Addlabel1 extends React.Component{
 
     shouldComponentUpdate = () => true
 
-
+    
+callForce = () => {
+    this.forceUpdate()
+}
     
     constructor(){
         super();
@@ -22,7 +26,6 @@ class Addlabel1 extends React.Component{
     
 
     appendChild(){
-       
         this.setState({
             
             children: [ 

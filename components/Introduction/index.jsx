@@ -1,11 +1,41 @@
 import Tags from '../Tags'
-import React from 'react';
+import Editable from "../Editable";
+import React, { useState } from "react";
+
+
+
+function EditText() {
+
+  const [task, setTask] = useState("");
+
+ 
+  return (
+    <Editable
+      text={task}
+      placeholder="Edit this.."
+      type="input"
+    >
+      <input
+        type="text"
+        name="task"
+        placeholder="Edit this.."
+        value={task}
+        onChange={e => setTask(e.target.value)}
+      />
+    </Editable>
+  );
+}
 
 function Aboutme(props){
   return (
-    <p>{props.aboutme}</p>
+    
+    <p>
+      <EditText>{props.aboutme}</EditText>
+    </p>
   );
 }
+
+
 
 
 const Introduction = () => (
@@ -16,9 +46,10 @@ const Introduction = () => (
 
               <div className="w3-container">
                 <h5 className="w3-opacity"><b>About me</b></h5>
-                <Aboutme aboutme="Blah blah blah I like to play X games for Y reason.  This is a test description and I can't think of anything else to write.  Hopefully this is long enough for my testing purposes."/>
+                <Aboutme/>
                 <hr />
               </div>
+              
 
 
               <Tags/>

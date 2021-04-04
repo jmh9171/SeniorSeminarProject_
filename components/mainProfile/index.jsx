@@ -1,4 +1,6 @@
-import React from 'react';
+
+import Editable from "../Editable";
+import React, { useState } from "react";
 
 function App() {
   return (
@@ -14,10 +16,32 @@ function App() {
   );
 }
 
+function EditText() {
+
+  const [task, setTask] = useState("");
+
+ 
+  return (
+    <Editable
+      text={task}
+      placeholder="Edit this.."
+      type="input"
+    >
+      <input
+        type="text"
+        name="task"
+        placeholder="Edit this.."
+        value={task}
+        onChange={e => setTask(e.target.value)}
+      />
+    </Editable>
+  );
+}
+
 function Username(props) {
   return (
     <p>
-      Username: {props.name}
+      Username: <EditText>{props.name}</EditText>
     </p>
   );
 }
@@ -48,11 +72,13 @@ const Mainprofile = () => (
                
                 <hr />
                 <p className="w3-large"><b><i className="fa fa-asterisk fa-fw w3-margin-right w3-text-dark-grey" />Preferred games</b></p>
-                <Preferredgame preferredgame="Maplestory"/>
-                <Preferredgame preferredgame="League of Legends"/>
-                <Preferredgame preferredgame="FFXIV"/>
-                <Preferredgame preferredgame="Rocket League"/>
-                <Preferredgame preferredgame="Warframe"/>
+                <EditText/>
+                <br></br>
+                <EditText/>
+                <br></br>
+                <EditText/>
+                
+                
 
 {/*                 
                 <div className="w3-light-grey w3-round-xlarge w3-small">
