@@ -26,11 +26,33 @@ function EditText() {
   );
 }
 
+function EditArea(props) {
+
+  const [description, setDescription] = useState("");
+
+ 
+  return (
+    <Editable
+  text={description}
+  placeholder={props.aboutdesc}
+  type="textarea"
+>
+  <textarea
+    name="description"
+    placeholder="Enter text here.."
+    rows="5"
+    value={description}
+    onChange={e => setDescription(e.target.value)}
+  />
+    </Editable>
+  );
+}
+
 function Aboutme(props){
   return (
     
     <p>
-      <EditText>{props.aboutme}</EditText>
+      <EditArea aboutdesc="Please write something about yourself..">{props.aboutme}</EditArea>
     </p>
   );
 }
@@ -57,7 +79,14 @@ const Introduction = () => (
 
         </div>
 
+        <style>{`
+        textarea {
+          width:90%;
+          max-width:90%;
+          max-height:30%;
+        }
 
+      `}</style>
 
     </introduction>
 )
