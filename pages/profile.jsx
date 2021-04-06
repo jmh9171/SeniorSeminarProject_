@@ -84,9 +84,13 @@ export default function about(props) {
 }
 
 export async function getServerSideProps({ req }) {
+  // const idk = fetcher('/api/get-username', {
+  //   method: 'POST',
+  //   headers: { 'Content-Type': 'application/json' },
+  // })
   //TODO
   return {
-    props: { nameOfUser: "response.username" }, // will be passed to the page component as props
+    props: { nameOfUser: "jake" }, // will be passed to the page component as props
   }
 }
 
