@@ -41,7 +41,7 @@ function EditText() {
 function Username(props) {
   return (
     <p>
-      Username: <EditText>{props.name}</EditText>
+      Username: {props.name}
     </p>
   );
 }
