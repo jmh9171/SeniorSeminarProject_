@@ -8,7 +8,7 @@ function EditText() {
 
   const [task, setTask] = useState("");
 
- 
+
   return (
     <Editable
       text={task}
