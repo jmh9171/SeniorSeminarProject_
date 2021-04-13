@@ -1,18 +1,21 @@
 import {
     query
 } from '../../lib/db'
+import withSession from '../../lib/session'
 /**
  * @param  {} req - request
  * @param  {} res - response
  */
-const handler = async (req, res) => {
+export default withSession(async (req, res) => {
     // pull the username and password from the request body message
     const {
-        username,
-        password
+        hhh
     } = req.body
-
+    //console.log(req)
+    
     try {
+        const hh = req.session.get('user')
+        //console.log("Here: ",hh);
         // check if there is a username and password
         if (!username || !password) {
             // if not return a message 
@@ -51,11 +54,9 @@ const handler = async (req, res) => {
             })
 
     } catch (e) {
-        //console.log(e.message)
         return res.status(500)
             .json({
                 message: e.message
             })
     }
-}
-export default handler
+})

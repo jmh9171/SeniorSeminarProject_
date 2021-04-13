@@ -14,6 +14,8 @@ export default withSession(async (req, res) => {
     } = req.body
 
     try {
+
+        
         // check if there is a username and password
         if (!username || !password) {
             // if not return a message 
@@ -42,6 +44,8 @@ export default withSession(async (req, res) => {
             if (password === results[0].passhash) {
                 req.session.set('user', user)
                 await req.session.save()
+
+                //console.log("Here",req.session.get("user"));
                 return res.status(200)
                     .json({
                         message: results
@@ -62,7 +66,6 @@ export default withSession(async (req, res) => {
             })
 
     } catch (e) {
-        console.log(e.message)
         return res.status(500)
             .json({
                 message: e.message

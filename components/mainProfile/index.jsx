@@ -6,7 +6,7 @@ function App({ username }) {
 
   return (
     <div>
-      <Username name="Jake" />
+      <Username/>
       <Avatar avatarURL="https://placekitten.com/g/64/64" />
       <Preferredgame Preferredgame="Maplestory" />
       <Preferredgame Preferredgame="League of Legends" />
@@ -74,6 +74,5 @@ const Mainprofile = ({nameOfUser}) => (
 
   </mainprofile>
 )
-
 
 export default Mainprofile

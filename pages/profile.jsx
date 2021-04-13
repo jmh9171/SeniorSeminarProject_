@@ -2,11 +2,12 @@ import Head from 'next/head'
 import Mainprofile from '../components/mainProfile'
 import Introduction from '../components/Introduction'
 import Profileplaygroups from '../components/ProfilePlaygroups'
-//import App from '../components/profileTest'
+
 import Event from '../components/event'
 import React from 'react';
 import fetcher from '../lib/fetchJson'
 import useUser from '../lib/useUser'
+
 
 
 
@@ -18,6 +19,10 @@ export default function about(props) {
     redirectIfFound: true,
   })
 
+  const data = fetcher('http://localhost:3000/api/get-username', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+  })
 
   return (
     <div>
@@ -83,11 +88,20 @@ export default function about(props) {
   );
 }
 
+
+
 export async function getServerSideProps({ req }) {
-  // const idk = fetcher('/api/get-username', {
-  //   method: 'POST',
-  //   headers: { 'Content-Type': 'application/json' },
-  // })
+
+
+  const hhh = "'hello'"
+  const idk = fetcher('http://localhost:3000/api/get-username', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      hhh
+    }),
+  })
+  //console.log(idk);
   //TODO
   return {
     props: { nameOfUser: "jake" }, // will be passed to the page component as props
