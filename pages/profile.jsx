@@ -19,10 +19,10 @@ export default function about(props) {
     redirectIfFound: true,
   })
 
-  const data = fetcher('http://localhost:3000/api/get-username', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-  })
+  // const data = fetcher('http://localhost:3000/api/set-cookie', {
+  //   method: 'POST',
+  //   headers: { 'Content-Type': 'application/json' },
+  // })
 
   return (
     <div>
@@ -92,21 +92,21 @@ export default function about(props) {
 
 export async function getServerSideProps({ req }) {
 
-
-  const hhh = "'hello'"
-  const idk = fetcher('http://localhost:3000/api/get-username', {
+  const cook = req.cookies.session
+  const idk = await fetcher('http://localhost:3000/api/get-username', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      hhh
+      cook,
     }),
   })
-  //console.log(idk);
+  console.log("IDK: ",idk);
   //TODO
   return {
-    props: { nameOfUser: "jake" }, // will be passed to the page component as props
+    props: { nameOfUser: idk.userInfo[0].username }, // will be passed to the page component as props
   }
 }
 
 //Fe26.2*1*bea44419f0d3ac5d08652476fcfa47b02a4150288ac3cc7dace53bba681cf727*Tqll6LwMe5mVniqZTms_tQ*M7rgDv8vHfbWq8ZIbC5Kbru6RM546cicGXnahORwVSaFldnG1SftnwztHAKYmJmOvmA25tGOJoqQwAwiqtOG4_BsyjdmO6ZxTVL8RhRC580q39QowDZO8magLJtJxt3UuR8AQf4POI8p1vSm52SrneoKMN8kh2vrPxY-OPnJeHD2vxxgwTRDsRN3sjV1IJk5*1618454212981*8a27f7b9884bbefa7f8875465fba6ab9d3dea3ebd970038362094d6f65e5588a*fwE2CX6SUK80W-oWXJ2m6dmrDK0uZ8HvO45HC0jougI
 //Fe26.2*1*a35114b586bcd0d897eb7e4ac21e11853bea6fe2aaff02d7724d117e2d9c25b8*Z9Ijpb6bHMYvJC7qhqdGEw*GPSVqjpOD0Z3yHGas3jXuv8T6WhKlLDVwrZiTrFGQqRg0Lh6qVv0V7W-D-8rp5VGolojznD1-JJZ4dgsjxCEECOgJ-k9k2fZ6PKwOpjmsIsgUDGVh4o9pRDuHWUyjoWx6x8Ji8qOJXtrV5t25aL0l3AtIiiZUnIfWDY4uzDXLzP8UuLEgJeECui07Y3U9rbA*1618460203656*42abcc2512918fba362172dd472a18ebc9009c99183c8f9efaf100f3f03e67af*fnIYme-K1w8O25sLCMOSVGiGhjlrERxUVtwiZyeTHDo
+//Fe26.2*1*8717bc4b6ccdb73448451b4cd9fb4168702df01deac7ca627af7f6540e63385b*GL2JYEePBIFV4fOhgjHxpQ*eWHPdBIcfgh0XGB8Z36g8m77VSsntnz9DBmN2HI6pW986hwucz-NpVmGVM4jlaRHnyu7rtD82sqTP8X5lGCITN8T-WFxoY3trHTmLnUQjzU*1619637916667*1e93be8ba9e381c939c763853fcf0d63d3e7d54e7b921fa91120899a8b4ae6b6*0y2KPw1Lg8VKfBs--_qXMTXPWmj3TtS9vONCVsvbNM8

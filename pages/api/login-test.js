@@ -13,9 +13,8 @@ export default withSession(async (req, res) => {
         password
     } = req.body
 
-    try {
 
-        
+    try {
         // check if there is a username and password
         if (!username || !password) {
             // if not return a message 
@@ -25,6 +24,11 @@ export default withSession(async (req, res) => {
                 })
         }
 
+        // the query to see if the username is already taken 
+        const results = await query(
+            `SELECT passhash FROM users WHERE username = ?`,
+            [username]
+        );
 
 
         const user = {
@@ -32,20 +36,13 @@ export default withSession(async (req, res) => {
             username: username,
         }
 
-        // the query to see if the username is already taken 
-        const results = await query(
-            `SELECT passhash FROM users WHERE username = ?`,
-            [username]
-        )
-
         // if the resulting object contains anything, the first element will be filled.
         // if there is no first element, there were no results
         if (results[0]) {
             if (password === results[0].passhash) {
                 req.session.set('user', user)
                 await req.session.save()
-
-                //console.log("Here",req.session.get("user"));
+                //TODO 
                 return res.status(200)
                     .json({
                         message: results

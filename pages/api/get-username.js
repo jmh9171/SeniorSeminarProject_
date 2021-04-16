@@ -7,54 +7,40 @@ import withSession from '../../lib/session'
  * @param  {} res - response
  */
 export default withSession(async (req, res) => {
-    // pull the username and password from the request body message
-    const {
-        hhh
-    } = req.body
-    //console.log(req)
-    
+
     try {
-        const hh = req.session.get('user')
-        //console.log("Here: ",hh);
-        // check if there is a username and password
-        if (!username || !password) {
-            // if not return a message 
-            return res.status(400)
+        console.log("HEre")
+    console.log(req.body)
+        // the query to see if the username is already taken 
+        const userID = await query(
+            `SELECT id FROM userSession WHERE sesh = ?`,
+            [req.body.cook]
+        )
+
+        console.log("session cookie: ", req.body.cook)
+        
+        if (!userID) {
+            return res.status(401)
                 .json({
-                    message: 'Must supply a `username` and `password`'
+                    message: 'no session available'
                 })
         }
 
-        // the query to see if the username is already taken 
-        const results = await query(
-            `SELECT passhash FROM users WHERE username = ?`,
-            [username]
+        const userInfo = await query(
+            `SELECT username FROM users WHERE id = ?`,
+            [userID[0].id]
         )
-
-        // if the resulting object contains anything, the first element will be filled.
-        // if there is no first element, there were no results
-        if (results[0]) {
-            if (password === results[0].passhash) {
-                return res.status(200)
-                    .json({
-                        message: results
-                    })
-            } else {
-                return res.status(401)
-                    .json({
-                        message: 'No matching username or password'
-                    })
-            }
-        }
+        console.log(userInfo)
+        
 
         // else, return a status 400 response, indicating no match
-        return res.status(401)
+        return res.status(200)
             .json({
-                message: 'No matching username or password'
+                userInfo: userInfo
             })
 
     } catch (e) {
-        return res.status(500)
+        return res.status(200)
             .json({
                 message: e.message
             })

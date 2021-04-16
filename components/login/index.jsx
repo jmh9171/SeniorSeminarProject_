@@ -57,6 +57,19 @@ export default function EntryForm() {
           }),
         })
       )
+      //console.log("Login index.js, user: ", user);
+
+      const idk = await mutateUser(
+        fetchJson('/api/set-cookie', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            username,
+            password,
+          }),
+        })
+      )
+      console.log("Login index.js, idk: ", idk)
       // if there is a bad status code, an error is thrown.
     } catch (e) {
       // if the password is not matching, an unauthorized error is thrown
