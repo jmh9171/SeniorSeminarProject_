@@ -63,10 +63,6 @@ export default function EntryForm() {
         fetchJson('/api/set-cookie', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            username,
-            password,
-          }),
         })
       )
       console.log("Login index.js, idk: ", idk)

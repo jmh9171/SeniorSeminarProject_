@@ -9,8 +9,8 @@ import withSession from '../../lib/session'
 export default withSession(async (req, res) => {
 
     try {
-        console.log("HEre")
-    console.log(req.body)
+
+        console.log(req.body)
         // the query to see if the username is already taken 
         const userID = await query(
             `SELECT id FROM userSession WHERE sesh = ?`,
@@ -18,7 +18,7 @@ export default withSession(async (req, res) => {
         )
 
         console.log("session cookie: ", req.body.cook)
-        
+
         if (!userID) {
             return res.status(401)
                 .json({
@@ -27,11 +27,11 @@ export default withSession(async (req, res) => {
         }
 
         const userInfo = await query(
-            `SELECT username FROM users WHERE id = ?`,
+            `SELECT username, description FROM users WHERE id = ?`,
             [userID[0].id]
         )
         console.log(userInfo)
-        
+
 
         // else, return a status 400 response, indicating no match
         return res.status(200)

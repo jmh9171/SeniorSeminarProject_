@@ -19,11 +19,6 @@ export default function about(props) {
     redirectIfFound: true,
   })
 
-  // const data = fetcher('http://localhost:3000/api/set-cookie', {
-  //   method: 'POST',
-  //   headers: { 'Content-Type': 'application/json' },
-  // })
-
   return (
     <div>
       <Head>
@@ -54,7 +49,7 @@ export default function about(props) {
           {/* Right Column */}
           <div className="w3-twothird">
 
-            <Introduction></Introduction>
+            <Introduction description={props.description}></Introduction>
             <Profileplaygroups></Profileplaygroups>
 
             {/* End Right Column */}
@@ -65,10 +60,6 @@ export default function about(props) {
         </div>
         {/* End Page Container */}
       </div>
-
-
-
-
       <style jsx global>{`
         html,
         body {
@@ -93,17 +84,20 @@ export default function about(props) {
 export async function getServerSideProps({ req }) {
 
   const cook = req.cookies.session
-  const idk = await fetcher('http://localhost:3000/api/get-username', {
+  const userData = await fetcher('http://localhost:3000/api/get-username', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       cook,
     }),
   })
-  console.log("IDK: ",idk);
+  console.log("IDK: ", userData);
   //TODO
   return {
-    props: { nameOfUser: idk.userInfo[0].username }, // will be passed to the page component as props
+    props: {
+      nameOfUser: userData.userInfo[0].username,
+      description: userData.userInfo[0].description
+    }, // will be passed to the page component as props
   }
 }
 
