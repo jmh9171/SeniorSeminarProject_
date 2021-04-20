@@ -9,16 +9,12 @@ import withSession from '../../lib/session'
 export default withSession(async (req, res) => {
 
     try {
-
-        console.log(req.body)
-        // the query to see if the username is already taken 
+        // get the id associated with the session
         const userID = await query(
             `SELECT id FROM userSession WHERE sesh = ?`,
             [req.body.cook]
         )
-
-        console.log("session cookie: ", req.body.cook)
-
+        // if there isnt one then return bad status code
         if (!userID) {
             return res.status(401)
                 .json({
@@ -27,10 +23,10 @@ export default withSession(async (req, res) => {
         }
 
         const userInfo = await query(
-            `SELECT username, description FROM users WHERE id = ?`,
+            `SELECT username, description FROM user WHERE user_id = ?`,
             [userID[0].id]
         )
-        console.log(userInfo)
+        console.log("The user info: ", userInfo)
 
 
         // else, return a status 400 response, indicating no match
@@ -40,7 +36,8 @@ export default withSession(async (req, res) => {
             })
 
     } catch (e) {
-        return res.status(200)
+        console.log(e.message)
+        return res.status(500)
             .json({
                 message: e.message
             })

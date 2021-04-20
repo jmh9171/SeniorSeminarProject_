@@ -9,17 +9,14 @@ import withSession from '../../lib/session'
 export default withSession(async (req, res) => {
     try {
         const user = req.session.get("user")
-        console.log("request cookies: ", req.cookies.session)
         const id = await query(
-            'SELECT id FROM users WHERE username = ?',
+            'SELECT user_id FROM user WHERE username = ?',
             [user.username]
         )
-
         const results = await query(
             `INSERT INTO userSession (id, sesh) VALUES (?,?)`,
-            [id[0].id, req.cookies.session]
+            [id[0].user_id, req.cookies.session]
         )
-        
 
         return res.status(200)
             .json({
@@ -27,6 +24,10 @@ export default withSession(async (req, res) => {
             })
 
     } catch (e) {
-        console.log(e);
+        console.log(e.message)
+        return res.status(500)
+            .json({
+                message: e.message
+            })
     }
 })
