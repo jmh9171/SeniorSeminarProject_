@@ -41,7 +41,7 @@ export default function EntryForm() {
     }
 
     try {
-      // // call the method for the api
+      // call the method for the api
       // call the mutateUser callback function 
       // this should be what creates the session
 
@@ -65,7 +65,7 @@ export default function EntryForm() {
           headers: { 'Content-Type': 'application/json' },
         })
       )
-      
+
       // if there is a bad status code, an error is thrown.
     } catch (e) {
       // if the password is not matching, an unauthorized error is thrown

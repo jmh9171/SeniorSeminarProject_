@@ -23,7 +23,7 @@ export default withSession(async (req, res) => {
                     message: 'Must supply a `username` and `password`'
                 })
         }
-        
+
         // the query to see if the username is already taken 
         const results = await query(
             `SELECT password FROM user WHERE username = ?`,
@@ -36,21 +36,17 @@ export default withSession(async (req, res) => {
             username: username,
         }
 
-
-
         // if the resulting object contains anything, the first element will be filled.
         // if there is no first element, there were no results
         if (results[0]) {
             if (password === results[0].password) {
                 req.session.set('user', user)
                 await req.session.save()
-                //TODO 
                 return res.status(200)
                     .json({
                         message: results
                     })
             } else {
-
                 return res.status(401)
                     .json({
                         message: 'No matching username or password'

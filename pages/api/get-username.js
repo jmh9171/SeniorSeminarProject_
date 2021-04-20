@@ -26,8 +26,6 @@ export default withSession(async (req, res) => {
             `SELECT username, description FROM user WHERE user_id = ?`,
             [userID[0].id]
         )
-        console.log("The user info: ", userInfo)
-
 
         // else, return a status 400 response, indicating no match
         return res.status(200)
