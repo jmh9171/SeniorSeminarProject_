@@ -10,7 +10,7 @@ return(
         </Head>
     <Header/>
     <h1>
-        This is the Content Page
+        This is the Content Page.
     </h1>
 
    
