@@ -1,0 +1,16 @@
+{
+  "name": "node-simple-group-chat",
+  "version": "1.0.0",
+  "description": "test chat",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Aj",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "socket.io": "^4.0.1"
+  }
+}
