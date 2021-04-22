@@ -77,6 +77,8 @@ const Mainprofile = () => (
                 <EditText/>
                 <br></br>
                 <EditText/>
+
+                <p style={{fontSize: "20px", color: "black"}}><a href="/profileEditForm">Edit Info</a></p>
                 
                 
 
