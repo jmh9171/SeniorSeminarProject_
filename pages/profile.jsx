@@ -28,7 +28,6 @@ export default function about(props) {
 
 
       <meta charSet="UTF-8" />
-      <style dangerouslySetInnerHTML={{ __html: "\nhtml,body,h1,h2,h3,h4,h5,h6 {font-family: \"Roboto\", sans-serif}\n" }} />
 
       <div>
         <meta charSet="UTF-8" />

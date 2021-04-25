@@ -58,17 +58,14 @@ const Mainprofile = ({nameOfUser}) => (
           <Preferredgame preferredgame="Rocket League" />
           <Preferredgame preferredgame="Warframe" />
 
-          {/*                 
-                <div className="w3-light-grey w3-round-xlarge w3-small">
-                <center><p><i className="fa fa-star fa-fw w3-margin-right w3-text-yellow" /><i className="fa fa-star fa-fw w3-margin-right w3-text-yellow" /><i className="fa fa-star fa-fw w3-margin-right w3-text-yellow" /></p></center>
-                </div>
- */}
+
+
+         
 
           <br />
           <br />
         </div>
       </div><br />
-      {/* End Left Column */}
     </div>
 
 
