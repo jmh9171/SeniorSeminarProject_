@@ -78,15 +78,9 @@ const Mainprofile = () => (
                 <br></br>
                 <EditText/>
 
-                <p style={{fontSize: "20px", color: "black"}}><a href="/profileEditForm">Edit Info</a></p>
+          <center><p style={{fontSize: "20px", color: "black"}}><a href="/profileEditForm">Edit Info</a></p></center>
                 
                 
-
-{/*                 
-                <div className="w3-light-grey w3-round-xlarge w3-small">
-                <center><p><i className="fa fa-star fa-fw w3-margin-right w3-text-yellow" /><i className="fa fa-star fa-fw w3-margin-right w3-text-yellow" /><i className="fa fa-star fa-fw w3-margin-right w3-text-yellow" /></p></center>
-                </div>
- */}
 
                 <br />
                 <br />

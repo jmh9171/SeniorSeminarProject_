@@ -34,11 +34,12 @@ export default function about() {
             {/* Put code here */}
           
             <div>
-        <div className="awesome" style={{border: '1px solid red'}}>
-          <label htmlFor="name">Enter your name: </label>
-          <input type="text" id="name" />
+              
+        <div className="test">
+          <label htmlFor="text2">Enter something: </label>
+          <input type="text" id="text2" />
         </div>
-        <p>Enter your HTML here</p>
+        <p>Sample text</p>
       </div>
 
           </div>
