@@ -87,7 +87,7 @@ export default function EntryForm() {
           <input
             className={Styles.input}
             type="text"
-            placeholder="Enter Username"
+            placeholder="Username"
             name="uname" required
             value={username}
             onChange={(e) => setUname(e.target.value)}
@@ -96,20 +96,19 @@ export default function EntryForm() {
           <input
             className={Styles.input}
             type="password"
-            placeholder="Enter Password"
+            placeholder="Password"
             name="psw"
             value={password}
             onChange={(e) => setPword(e.target.value)}
           />
-          <button className={Styles.button} type="submit">Login</button>
-          <label>
-            <input type="checkbox" defaultChecked="checked" name="remember" /> Remember me
-        </label>
+          
+          <center><button className={Styles.button} type="submit">Login</button></center>
+             
+          
         </div>
-        <div className={Styles.container} style={{ backgroundColor: '#f1f1f1' }}>
-          <button type="button" className={Styles.cancelbtn}>Cancel</button>
-          <span className={Styles.psw}>Forgot <a href="#">password?</a></span>
-        </div>
+
+       
+        
       </form>
     </>)
   } else {
@@ -120,12 +119,13 @@ export default function EntryForm() {
           <div className={Styles.imgcontainer}>
             <img src="../../images/blankP.png" alt="Avatar" className={Styles.avatar} />
           </div>
+          
           <div className={Styles.container}>
             <label htmlFor="uname"><b>Username</b></label>
             <input
               className={Styles.input}
               type="text"
-              placeholder="Enter Username"
+              placeholder="Username"
               name="uname" required
               value={username}
               onChange={(e) => setUname(e.target.value)}
@@ -134,20 +134,16 @@ export default function EntryForm() {
             <input
               className={Styles.input}
               type="password"
-              placeholder="Enter Password"
+              placeholder="Password"
               name="psw"
               value={password}
               onChange={(e) => setPword(e.target.value)}
             />
-            <button className={Styles.button} type="submit">Login</button>
-            <label>
-              <input type="checkbox" defaultChecked="checked" name="remember" /> Remember me
-              </label>
+             
+             <center><button className={Styles.button} type="submit">Login</button></center>
+
           </div>
-          <div className={Styles.container} style={{ backgroundColor: '#f1f1f1' }}>
-            <button type="button" className={Styles.cancelbtn}>Cancel</button>
-            <span className={Styles.psw}>Forgot <a href="#">password?</a></span>
-          </div>
+         
         </form>
       </>
     )
