@@ -13,31 +13,8 @@ export default function about() {
       <Head>
         <title>About Us</title>
         <link rel="icon" href="/favicon.ico" />
-        
       </Head>
 
-
-
-      <Picturehead/>
-      <style jsx>{`
-
-    body, html {
-      height: 100%;
-      font-family: "Inconsolata", sans-serif;
-    }
-    
-    .bgimg {
-      background-position: center;
-      background-size: cover;
-      background-image: url("/images/AboutHead.jpg");
-      min-height: 75%;
-    }
-    
-    .menu {
-      display: none;
-    }
-
-            `}</style>
 
       <div>
         <meta charSet="UTF-8" />
@@ -48,8 +25,8 @@ export default function about() {
         {/* Add a background color and large text to the whole page */}
        
         <div className="w3-sand w3-grayscale w3-large">
-       
-
+          
+          <Picturehead/>
           <Aboutplaygroup />
           <Themission />
 

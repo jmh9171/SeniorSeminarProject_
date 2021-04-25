@@ -87,7 +87,7 @@ export default function EntryForm() {
           <input
             className={Styles.input}
             type="text"
-            placeholder="Username"
+            placeholder="Username..."
             name="uname" required
             value={username}
             onChange={(e) => setUname(e.target.value)}
@@ -96,7 +96,7 @@ export default function EntryForm() {
           <input
             className={Styles.input}
             type="password"
-            placeholder="Password"
+            placeholder="Password..."
             name="psw"
             value={password}
             onChange={(e) => setPword(e.target.value)}
@@ -125,7 +125,7 @@ export default function EntryForm() {
             <input
               className={Styles.input}
               type="text"
-              placeholder="Username"
+              placeholder="Username..."
               name="uname" required
               value={username}
               onChange={(e) => setUname(e.target.value)}
@@ -134,7 +134,7 @@ export default function EntryForm() {
             <input
               className={Styles.input}
               type="password"
-              placeholder="Password"
+              placeholder="Password..."
               name="psw"
               value={password}
               onChange={(e) => setPword(e.target.value)}
@@ -142,9 +142,14 @@ export default function EntryForm() {
              
              <center><button className={Styles.button} type="submit">Login</button></center>
 
+
           </div>
          
         </form>
+
+
+
+        
       </>
     )
   }

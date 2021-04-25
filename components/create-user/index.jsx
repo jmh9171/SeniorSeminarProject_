@@ -90,15 +90,11 @@ export default function createUserForm() {
                             value={password}
                             onChange={(e) => setPword(e.target.value)}
                         />
-                        <button className={Styles.button} type="submit">Login</button>
-                        <label>
-                            <input type="checkbox" defaultChecked="checked" name="remember" /> Remember me
-            </label>
+                        
+                        <center><button className={Styles.button} type="submit">Login</button></center>
+                        
                     </div>
-                    <div className={Styles.container} style={{ backgroundColor: '#f1f1f1' }}>
-                        <button type="button" className={Styles.cancelbtn}>Cancel</button>
-                        <span className={Styles.psw}>Forgot <a href="#">password?</a></span>
-                    </div>
+                    <div className={Styles.container} style={{ backgroundColor: '#f1f1f1' }}></div>
                 </form>
             </>
         )
@@ -138,15 +134,10 @@ export default function createUserForm() {
                             value={password}
                             onChange={(e) => setPword(e.target.value)}
                         />
-                        <button className={Styles.button} type="submit">Login</button>
-                        <label>
-                            <input type="checkbox" defaultChecked="checked" name="remember" /> Remember me
-                </label>
+                       <center><button className={Styles.button} type="submit">Login</button></center>
+                       
                     </div>
-                    <div className={Styles.container} style={{ backgroundColor: '#f1f1f1' }}>
-                        <button type="button" className={Styles.cancelbtn}>Cancel</button>
-                        <span className={Styles.psw}>Forgot <a href="#">password?</a></span>
-                    </div>
+                    <div className={Styles.container} style={{ backgroundColor: '#f1f1f1' }}></div>
                 </form>
             </>
         )

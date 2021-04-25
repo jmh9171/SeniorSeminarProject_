@@ -13,6 +13,11 @@ export default function loginPage() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Login />
+
+
+
     </div>
+
+    
   );
 }

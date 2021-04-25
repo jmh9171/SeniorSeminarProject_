@@ -1,10 +1,9 @@
 const Themission = () => (
     <themission>
   
-            {/* Menu Container */}
-            <div className="w3-container" id="menu">
+            <div className="w3-container">
                     <div className="w3-content" style={{maxWidth: '1000px'}}>
-                    <h5 className="w3-center w3-padding-48"><span className="w3-tag w3-wide">THE MISSION</span></h5>
+                    <h5 className="w3-center w3-padding-32"><span className="w3-tag w3-grey w3-wide"><b>THE MISSION</b></span></h5>
 
                     
                     <div className="w3-container" id="about">
