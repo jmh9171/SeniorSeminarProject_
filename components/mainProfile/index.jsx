@@ -78,7 +78,7 @@ const Mainprofile = () => (
                 <br></br>
                 <EditText/>
 
-          <center><p style={{fontSize: "20px", color: "black"}}><a href="/profileEditForm">Edit Info</a></p></center>
+          <center><p style={{fontSize: "20px", color: "black"}}><a href="/profileEditForm">Edit Profile</a></p></center>
                 
                 
 

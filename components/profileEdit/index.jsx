@@ -1,38 +1,47 @@
-
 import React from 'react';
 
 
 
 
-const Creategroupform = () => (
-    <creategroupform>
-   
-   <div>
-        <h3 style={{color: "white"}}>Create Group Form</h3>
+const Profileedit = () => (
+    <profileedit>
+   <center>
+   <div style={{width: "80%"}}>
+       <center> <h3 style={{color: "white"}}>Edit Profile Form</h3></center>
         <div className="container">
           <form>
-            <label htmlFor="gname">Group Name</label>
-            <input type="text" id="gname" name="groupname" placeholder="Group name.." />
+        <label htmlFor="pgame">Preferred Game #1</label>
+        <input type="text" id="p1" name="pg1" placeholder="Preferred game.." />
+
+        <label htmlFor="pgame">Preferred Game #2</label>
+        <input type="text" id="p2" name="pg2" placeholder="Preferred game.." />
+
+        <label htmlFor="pgame">Preferred Game #3</label>
+        <input type="text" id="p3" name="pg3" placeholder="Preferred game.." />
+
+        <label htmlFor="intro">Introduction</label>
+        <textarea id="introduction" name="introduction" placeholder="Write something about yourself.." style={{height: '200px'}} defaultValue={""} />
 
 
-            <label htmlFor="tag1">Tag</label>
+            
+        <label htmlFor="tag1">Tag</label>
         <select id="tag1" name="tag1">
             <option value="casual">CASUAL</option>
             <option value="competitive">COMPETITIVE</option>
         </select>
 
-            <label htmlFor="subject">Description</label>
-            <textarea id="description" name="description" placeholder="Write something about your group.." style={{height: '200px'}} defaultValue={""} />
-            <input type="submit" defaultValue="Submit" style={{color: "white"}}/>
+
+            <center><input type="submit" defaultValue="Submit" style={{color: "white", margin: "10px"}}/></center>
           </form>
 
         </div>
+        
 </div>
-
+</center>
 
 
 <style>{`
-       body {font-family: Arial, Helvetica, sans-serif;}
+       body {font-family: Arial}
        * {box-sizing: border-box;}
        
        input[type=text], select, textarea {
@@ -84,7 +93,7 @@ const Creategroupform = () => (
       `}</style>
   
 
-    </creategroupform>
+    </profileedit>
 )
 
-export default Creategroupform
+export default Profileedit
