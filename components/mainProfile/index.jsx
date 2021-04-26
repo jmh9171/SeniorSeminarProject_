@@ -59,7 +59,7 @@ const Mainprofile = ({nameOfUser}) => (
           <Preferredgame preferredgame="Warframe" />
 
 
-
+          <center><p style={{fontSize: "20px", color: "black"}}><a href="/profileEditForm">Edit Profile</a></p></center>
          
 
           <br />
