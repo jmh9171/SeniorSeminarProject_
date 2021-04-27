@@ -12,12 +12,6 @@ import useUser from '../lib/useUser'
 
 
 export default function about(props) {
-  // use this to check if the user is logged in 
-  const { user, mutateUser } = useUser({
-    // this is where the user goes after they create the cookie
-    redirectTo: '/profile',
-    redirectIfFound: true,
-  })
 
   return (
     <div>
@@ -90,10 +84,9 @@ export async function getServerSideProps({ req }) {
       cook,
     }),
   })
-  console.log("UserData: ", userData);
-  //TODO
   return {
     props: {
+      userID: userData.userID,
       nameOfUser: userData.userInfo[0].username,
       description: userData.userInfo[0].description
     }, // will be passed to the page component as props

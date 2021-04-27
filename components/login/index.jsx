@@ -101,14 +101,8 @@ export default function EntryForm() {
             value={password}
             onChange={(e) => setPword(e.target.value)}
           />
-          
           <center><button className={Styles.button} type="submit">Login</button></center>
-             
-          
         </div>
-
-       
-        
       </form>
     </>)
   } else {
@@ -119,7 +113,6 @@ export default function EntryForm() {
           <div className={Styles.imgcontainer}>
             <img src="../../images/blankP.png" alt="Avatar" className={Styles.avatar} />
           </div>
-          
           <div className={Styles.container}>
             <label htmlFor="uname"><b>Username</b></label>
             <input
@@ -139,17 +132,9 @@ export default function EntryForm() {
               value={password}
               onChange={(e) => setPword(e.target.value)}
             />
-             
-             <center><button className={Styles.button} type="submit">Login</button></center>
-
-
+            <center><button className={Styles.button} type="submit">Login</button></center>
           </div>
-         
         </form>
-
-
-
-        
       </>
     )
   }

@@ -1,46 +1,85 @@
 import React from 'react';
+//react methods to hold states 
+import { useState } from 'react';
+import useUser from '../../lib/useUser'
 
 
 
 
-const Profileedit = () => (
-    <profileedit>
-   <center>
-   <div style={{width: "80%"}}>
-       <center> <h3 style={{color: "white"}}>Edit Profile Form</h3></center>
+export default function Profileedit({ userID }) {
+  //console.log(userID)
+  const { mutateUser } = useUser({
+    // this is where the user goes after they create the cookie
+    redirectTo: '/profile',
+    redirectIfFound: false,
+  })
+
+
+
+  const [prefGame_1, setPrefGame_1] = useState();
+  const [prefGame_2, setPrefGame_2] = useState();
+  const [prefGame_3, setPrefGame_3] = useState();
+  const [description, setDescription] = useState();
+
+
+  async function submitHandler(e) {
+    console.log("Here")
+    try {
+
+      const user = await mutateUser(
+        fetchJson('/api/set-profile', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            userID,
+            prefGame_1,
+            prefGame_2,
+            prefGame_3,
+            description,
+          }),
+        })
+      )
+      console.log(user)
+
+    } catch (e) {
+      console.log(e.message)
+    }
+  }
+
+  return (
+    <>
+      <div style={{ width: "80%" }}>
+        <center> <h3 style={{ color: "white" }}>Edit Profile Form</h3></center>
         <div className="container">
-          <form>
-        <label htmlFor="pgame">Preferred Game #1</label>
-        <input type="text" id="p1" name="pg1" placeholder="Preferred game.." />
+          <form onSubmit={submitHandler}>
+            <label htmlFor="pgame">Preferred Game #1</label>
+            <input type="text" id="p1" name="pg1" placeholder="Preferred game.." value={prefGame_1} onChange={(e) => setPrefGame_1(e.target.value)} />
 
-        <label htmlFor="pgame">Preferred Game #2</label>
-        <input type="text" id="p2" name="pg2" placeholder="Preferred game.." />
+            <label htmlFor="pgame">Preferred Game #2</label>
+            <input type="text" id="p2" name="pg2" placeholder="Preferred game.." value={prefGame_2} onChange={(e) => setPrefGame_2(e.target.value)} />
 
-        <label htmlFor="pgame">Preferred Game #3</label>
-        <input type="text" id="p3" name="pg3" placeholder="Preferred game.." />
+            <label htmlFor="pgame">Preferred Game #3</label>
+            <input type="text" id="p3" name="pg3" placeholder="Preferred game.." value={prefGame_3} onChange={(e) => setPrefGame_3(e.target.value)} />
 
-        <label htmlFor="intro">Introduction</label>
-        <textarea id="introduction" name="introduction" placeholder="Write something about yourself.." style={{height: '200px'}} defaultValue={""} />
-
-
-            
-        <label htmlFor="tag1">Tag</label>
-        <select id="tag1" name="tag1">
-            <option value="casual">CASUAL</option>
-            <option value="competitive">COMPETITIVE</option>
-        </select>
+            <label htmlFor="intro">Introduction</label>
+            <textarea id="introduction" name="introduction" placeholder="Write something about yourself.." style={{ height: '200px' }} defaultValue={""} value={description} onChange={(e) => setDescription(e.target.value)} />
 
 
-            <center><input type="submit" defaultValue="Submit" style={{color: "white", margin: "10px"}}/></center>
+
+            <label htmlFor="tag1">Tag</label>
+            <select id="tag1" name="tag1">
+              <option value="casual">CASUAL</option>
+              <option value="competitive">COMPETITIVE</option>
+            </select>
+
+            <center><input type="submit" style={{ color: "white", margin: "10px" }} /></center>
           </form>
 
         </div>
-        
-</div>
-</center>
 
+      </div>
 
-<style>{`
+      <style>{`
        body {font-family: Arial}
        * {box-sizing: border-box;}
        
@@ -77,7 +116,7 @@ const Profileedit = () => (
       `}</style>
 
 
-    <style jsx global>{`
+      <style jsx global>{`
         html,
         body {
           padding: 0;
@@ -91,9 +130,8 @@ const Profileedit = () => (
           box-sizing: border-box;
         }
       `}</style>
-  
 
-    </profileedit>
-)
 
-export default Profileedit
+    </>
+  )
+}
