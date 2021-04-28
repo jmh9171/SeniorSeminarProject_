@@ -26,22 +26,22 @@ const Themission = () => (
             <th colSpan={3}> <h5 className="w3-center w3-padding-32"><span className="w3-tag w3-grey w3-wide" style={{fontSize: "30px"}}><b>TECHNOLOGIES USED</b></span></h5></th> 
         </tr>
         <tr>  
-            <td><p style={{fontSize: "25px"}}>Node.js:</p></td>
+            <td><p style={{fontSize: "25px"}}><b>Node.js - </b></p></td>
             <td><p style={{fontSize: "25px"}}>Runtime environment</p></td>
             <td><img src="/images/NodePic.jpg" alt="Node.js"height={110} width={180}/></td>
         </tr>
         <tr>
-            <td><p style={{fontSize: "25px"}}>MySQL:</p></td>
+            <td><p style={{fontSize: "25px"}}><b>MySQL - </b></p></td>
             <td><p style={{fontSize: "25px"}}>Database system</p></td>
             <td><img src="/images/SQLPic.jpg" alt="Node.js"height={110} width={180} /></td>
         </tr>
         <tr>
-            <td><p style={{fontSize: "25px"}}>React: </p></td>
+            <td><p style={{fontSize: "25px"}}><b>React - </b></p></td>
             <td><p style={{fontSize: "25px"}}>Front-end framework</p></td>
             <td><img src="/images/ReactPic.jpg" alt="Node.js"height={110} width={180} /></td>
         </tr>
         <tr>
-            <td><p style={{fontSize: "25px"}}>Next.js: </p></td>
+            <td><p style={{fontSize: "25px"}}><b>Next.js - </b> </p></td>
             <td><p style={{fontSize: "25px"}}>Back-end web framework</p></td>
             <td><img src="/images/NextPic.jpg" alt="Node.js"height={110} width={180} /></td>
         </tr>
