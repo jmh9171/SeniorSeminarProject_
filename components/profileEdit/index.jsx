@@ -14,8 +14,6 @@ export default function Profileedit({ userID }) {
     redirectIfFound: false,
   })
 
-
-
   const [prefGame_1, setPrefGame_1] = useState();
   const [prefGame_2, setPrefGame_2] = useState();
   const [prefGame_3, setPrefGame_3] = useState();

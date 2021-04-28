@@ -65,8 +65,6 @@ export async function getServerSideProps({ req }) {
       cook,
     }),
   })
-  //console.log("UserData: ", userData);
-  //TODO
   return {
     props: {
       userID: userData.userID
