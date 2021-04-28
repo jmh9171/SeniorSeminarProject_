@@ -4,6 +4,7 @@ import React from 'react';
 import fetcher from '../lib/fetchJson'
 
 export default function about(props) {
+  //console.log(props.userID)
   return (
     <div>
       <Head>
@@ -23,7 +24,7 @@ export default function about(props) {
         <center>
 
           <div className="w3-middle-align" style={{ maxWidth: '80%', maxHeight: '50%' }}>
-            <Profileedit username={props.userID}/>
+            <Profileedit userID={props.userID}/>
           </div>
 
         </center>

@@ -7,20 +7,21 @@ import useUser from '../../lib/useUser'
 
 
 export default function Profileedit({ userID }) {
-  //console.log(userID)
+  console.log(userID)
   const { mutateUser } = useUser({
     // this is where the user goes after they create the cookie
     redirectTo: '/profile',
     redirectIfFound: false,
   })
 
-  const [prefGame_1, setPrefGame_1] = useState();
-  const [prefGame_2, setPrefGame_2] = useState();
-  const [prefGame_3, setPrefGame_3] = useState();
-  const [description, setDescription] = useState();
+  const [prefGame_1, setPrefGame_1] = useState('');
+  const [prefGame_2, setPrefGame_2] = useState('');
+  const [prefGame_3, setPrefGame_3] = useState('');
+  const [description, setDescription] = useState('');
 
 
   async function submitHandler(e) {
+
     console.log("Here")
     try {
 
@@ -37,7 +38,6 @@ export default function Profileedit({ userID }) {
           }),
         })
       )
-      console.log(user)
 
     } catch (e) {
       console.log(e.message)
@@ -46,34 +46,57 @@ export default function Profileedit({ userID }) {
 
   return (
     <>
-      <div style={{ width: "80%" }}>
-        <center> <h3 style={{ color: "white" }}>Edit Profile Form</h3></center>
-        <div className="container">
-          <form onSubmit={submitHandler}>
-            <label htmlFor="pgame">Preferred Game #1</label>
-            <input type="text" id="p1" name="pg1" placeholder="Preferred game.." value={prefGame_1} onChange={(e) => setPrefGame_1(e.target.value)} />
 
-            <label htmlFor="pgame">Preferred Game #2</label>
-            <input type="text" id="p2" name="pg2" placeholder="Preferred game.." value={prefGame_2} onChange={(e) => setPrefGame_2(e.target.value)} />
+      <div className="container">
+        <form onSubmit={submitHandler}>
 
-            <label htmlFor="pgame">Preferred Game #3</label>
-            <input type="text" id="p3" name="pg3" placeholder="Preferred game.." value={prefGame_3} onChange={(e) => setPrefGame_3(e.target.value)} />
+          <center> <h3 style={{ color: "white" }}>Edit Profile Form</h3></center>
+          <label htmlFor="pgame">Preferred Game #1</label>
+          <input
+            type="text"
+            id="p1"
+            name="pg1"
+            placeholder="Preferred game.."
+            value={prefGame_1}
+            onChange={(e) => setPrefGame_1(e.target.value)} />
 
-            <label htmlFor="intro">Introduction</label>
-            <textarea id="introduction" name="introduction" placeholder="Write something about yourself.." style={{ height: '200px' }} defaultValue={""} value={description} onChange={(e) => setDescription(e.target.value)} />
+          <label htmlFor="pgame">Preferred Game #2</label>
+          <input
+            type="text"
+            id="p2" name="pg2"
+            placeholder="Preferred game.."
+            value={prefGame_2}
+            onChange={(e) => setPrefGame_2(e.target.value)} />
+
+          <label htmlFor="pgame">Preferred Game #3</label>
+          <input
+            type="text"
+            id="p3"
+            name="pg3"
+            placeholder="Preferred game.."
+            value={prefGame_3}
+            onChange={(e) => setPrefGame_3(e.target.value)} />
+
+          <label htmlFor="intro">Introduction</label>
+          <textarea
+            id="introduction"
+            name="introduction"
+            placeholder="Write something about yourself.."
+            style={{ height: '200px' }}
+            value={description}
+            onChange={(e) => setDescription(e.target.value)} />
+
+          <label htmlFor="tag1">Tag</label>
+          <select id="tag1" name="tag1">
+            <option value="casual">CASUAL</option>
+            <option value="competitive">COMPETITIVE</option>
+          </select>
+
+          <center><button type="submit">Submit</button></center>
+
+        </form>
 
 
-
-            <label htmlFor="tag1">Tag</label>
-            <select id="tag1" name="tag1">
-              <option value="casual">CASUAL</option>
-              <option value="competitive">COMPETITIVE</option>
-            </select>
-
-            <center><input type="submit" style={{ color: "white", margin: "10px" }} /></center>
-          </form>
-
-        </div>
 
       </div>
 
@@ -133,3 +156,5 @@ export default function Profileedit({ userID }) {
     </>
   )
 }
+
+export async function getServerSideProps({ req }) { }
