@@ -67,7 +67,7 @@ export default function createUserForm() {
                         <input
                             className={Styles.input}
                             type="text"
-                            placeholder="Enter Email Address"
+                            placeholder="Email Address.."
                             name="email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
@@ -76,7 +76,7 @@ export default function createUserForm() {
                         <input
                             className={Styles.input}
                             type="text"
-                            placeholder="Enter Username"
+                            placeholder="Username.."
                             name="uname" required
                             value={username}
                             onChange={(e) => setUname(e.target.value)}
@@ -85,7 +85,7 @@ export default function createUserForm() {
                         <input
                             className={Styles.input}
                             type="password"
-                            placeholder="Enter Password"
+                            placeholder="Password.."
                             name="psw"
                             value={password}
                             onChange={(e) => setPword(e.target.value)}
@@ -111,7 +111,7 @@ export default function createUserForm() {
                         <input
                             className={Styles.input}
                             type="text"
-                            placeholder="Enter Email Address"
+                            placeholder="Email Address.."
                             name="email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
@@ -120,7 +120,7 @@ export default function createUserForm() {
                         <input
                             className={Styles.input}
                             type="text"
-                            placeholder="Enter Username"
+                            placeholder="Username.."
                             name="uname" required
                             value={username}
                             onChange={(e) => setUname(e.target.value)}
@@ -129,7 +129,7 @@ export default function createUserForm() {
                         <input
                             className={Styles.input}
                             type="password"
-                            placeholder="Enter Password"
+                            placeholder="Password.."
                             name="psw"
                             value={password}
                             onChange={(e) => setPword(e.target.value)}
