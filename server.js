@@ -11,7 +11,6 @@ app.prepare().then(() => {
   createServer((req, res) => {
     const parsedUrl = new URL(req.url, 'http://w.w')
     const { pathname, query } = parsedUrl
-
     if (pathname === '/content') {
       app.render(req, res, '/loginPage', query)
     } else if (pathname === '/content') {
