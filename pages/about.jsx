@@ -24,7 +24,7 @@ export default function about() {
 
         {/* Add a background color and large text to the whole page */}
        
-        <div className="w3-sand w3-grayscale w3-large">
+        <div className="w3-grayscale w3-large">
           
           <Picturehead/>
           <Aboutplaygroup />
