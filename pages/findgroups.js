@@ -1,5 +1,10 @@
 import Head from 'next/head'
+import Header from '../components/header'
+import Footer from '../components/footer'
 import Testjs from '../components/testjs'
+import Group from '../components/group'
+import groupFind from '../components/groupFind'
+import GroupFind from '../components/groupFind'
 
 
 
@@ -10,6 +15,7 @@ export default function about() {
             <title>Find groups</title>
             <link rel="icon" href="/favicon.ico" />
         </Head>
+        <Header/>
     <div>
             <meta charSet="UTF-8" />
             <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -22,23 +28,34 @@ export default function about() {
   </div>
 
     
-            <center><img src="images/TestPage.jpg" style={{opacity: '0.9', width: '100%', maxHeight: '1200px'}} className="w3-margin-top" /></center>
+            <center><img src="images/SiteNews.jpg" style={{opacity: '0.9', width: '100%', maxHeight: '1200px'}} className="w3-margin-top" /></center>
         <div className="w3-display-middle w3-center" style={{width: '50%', height: '85%', Padding: '30px'}}>
-              <span className="w3-text-black w3-display-container" style={{fontSize: '120px', padding: '10px'}}>Find Groups<br /></span>
+              <span className="w3-text-white w3-display-container" style={{fontSize: '120px', padding: '10px'}}>Find Groups<br /></span>
     
-    
-    <center> 
 
-      <div className="w3-middle-align" style={{maxWidth: '800px', maxHeight: '250px', overflow: 'hidden', overflow: 'auto', padding: '50px'}}>
 
-            <form className="example w3-padding-20" action="/action_page.php">
-              <input type="text" placeholder="Search.." name="search" />
-              <button type="submit"><i className="fa fa-search" /></button>
-            </form>
-    
-      </div>
+<div className="w3-middle-align" style={{maxWidth: '800px', maxHeight: '80%', overflow: 'hidden', overflow: 'auto'}}>
 
-    </center> 
+        
+  <GroupFind/>
+  <GroupFind/>
+  <GroupFind/>
+  <GroupFind/>
+  <GroupFind/>
+  <GroupFind/>
+  <GroupFind/>
+  <GroupFind/>
+  <GroupFind/>
+  <GroupFind/>
+  <GroupFind/>
+  <GroupFind/>
+  <GroupFind/>
+
+
+</div>
+
+
+   
 
 
         </div>
@@ -88,9 +105,6 @@ export default function about() {
     
 
 
-
-<Testjs/>
-
     
     
         <style jsx global>{`
@@ -108,7 +122,7 @@ export default function about() {
             }
           `}</style>
     
-
+          <Footer/>
         </div>
     );
     }
