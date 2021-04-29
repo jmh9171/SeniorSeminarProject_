@@ -34,7 +34,7 @@ export default function about() {
     
 
 
-<div className="w3-middle-align" style={{maxWidth: '800px', maxHeight: '80%', overflow: 'hidden', overflow: 'auto'}}>
+<div className="w3-middle-align" style={{maxWidth: '800px', maxHeight: '80%', overflow: 'hidden', overflow: 'auto', background: "rgba(46, 49, 49, 0.75)"}}>
 
         
   <GroupFind/>
