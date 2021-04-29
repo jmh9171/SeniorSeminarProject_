@@ -1,7 +1,5 @@
 //react methods to hold states 
 import { useState, useEffect } from 'react'
-// used fro accessing the next.js router
-import Router from 'next/router'
 // css styles
 import Styles from './index.module.css'
 // 
@@ -13,7 +11,7 @@ import fetchJson from '../../lib/fetchJson'
 
 
 //component that is returned
-export default function EntryForm() {
+export default function EntryForm(props) {
 
   // import mutateUser from useUser, have to do it in {} because 
   // it is not the default export. Set settings for object

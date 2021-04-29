@@ -12,7 +12,11 @@ import useUser from '../lib/useUser'
 
 
 export default function about(props) {
-
+  const { mutateUser } = useUser({
+    // this is where the user goes after they create the cookie
+    redirectTo: '/profile',
+    redirectIfFound: false,
+  })
   return (
     <div>
       <Head>
@@ -37,12 +41,12 @@ export default function about(props) {
         {/* The Grid */}
         <div className="w3-row-padding">
           {/* THis is the main profile component.*/}
-          <Mainprofile nameOfUser={props.nameOfUser}></Mainprofile>
+          <Mainprofile nameOfUser={props.nameOfUser} userGames={props.userGames}></Mainprofile>
 
           {/* Right Column */}
           <div className="w3-twothird">
 
-            <Introduction description={props.description}></Introduction>
+            <Introduction description={props.description} ></Introduction>
             <Profileplaygroups></Profileplaygroups>
 
             {/* End Right Column */}
@@ -77,18 +81,23 @@ export default function about(props) {
 export async function getServerSideProps({ req }) {
 
   const cook = req.cookies.session
-  const userData = await fetcher('http://localhost:3000/api/get-username', {
+  const userData = await fetcher('http://localhost:3000/api/get-userdata', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       cook,
     }),
   })
+
+  console.log(userData)
+
+
   return {
     props: {
       userID: userData.userID,
       nameOfUser: userData.userInfo[0].username,
-      description: userData.userInfo[0].description
+      description: userData.userInfo[0].description,
+      userGames: userData.userGames
     }, // will be passed to the page component as props
   }
 }

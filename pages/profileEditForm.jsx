@@ -4,7 +4,7 @@ import React from 'react';
 import fetcher from '../lib/fetchJson'
 
 export default function about(props) {
-  //console.log(props.userID)
+
   return (
     <div>
       <Head>
@@ -22,9 +22,8 @@ export default function about(props) {
       <div className="w3-display-middle w3-center" style={{ width: '50%', height: '85%' }}>
         <span className="w3-text-white" style={{ fontSize: '90px' }}>Edit Profile<br /></span>
         <center>
-
           <div className="w3-middle-align" style={{ maxWidth: '80%', maxHeight: '50%' }}>
-            <Profileedit userID={props.userID}/>
+            <Profileedit userID={props.userID} />
           </div>
 
         </center>
@@ -59,7 +58,7 @@ export default function about(props) {
 export async function getServerSideProps({ req }) {
 
   const cook = req.cookies.session
-  const userData = await fetcher('http://localhost:3000/api/get-username', {
+  const userData = await fetcher('http://localhost:3000/api/get-userdata', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({

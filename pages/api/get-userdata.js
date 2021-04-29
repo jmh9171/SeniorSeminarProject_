@@ -15,9 +15,9 @@ export default withSession(async (req, res) => {
             [req.body.cook]
         )
         // if there isnt one then return bad status code
-        
+
         if (!userID[0]) {
-            console.log("USER ID: ",userID)
+            console.log("USER ID: ", userID)
             return res.status(401)
                 .json({
                     message: 'no session available'
@@ -28,17 +28,29 @@ export default withSession(async (req, res) => {
             `SELECT username, description FROM user WHERE user_id = ?`,
             [userID[0].id]
         )
-        
 
+        const userGames = await query(
+            `SELECT game FROM userGames WHERE id = ?`,
+            [userID[0].id]
+        )
+
+
+
+
+        
         // else, return a status 400 response, indicating no match
         return res.status(200)
+
             .json({
                 userID: userID[0].id,
-                userInfo: userInfo
+                userInfo: userInfo,
+                userGames: {
+                    userGames
+                }
             })
 
     } catch (e) {
-        console.log("HERE: ",e.message)
+        console.log("get-userdata API: ", e.message)
         return res.status(500)
             .json({
                 message: e.message

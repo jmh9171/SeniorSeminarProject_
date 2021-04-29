@@ -31,7 +31,7 @@ export default withSession(async (req, res) => {
 
     // query the database for the requested username and email
     const check = await query(
-      `SELECT username email FROM users WHERE username = ? AND email = ?`,
+      `SELECT username email FROM user WHERE username = ? AND email = ?`,
       [username, email]
     )
 
@@ -46,7 +46,7 @@ export default withSession(async (req, res) => {
 
     // if not then insert them into the database 
     const results = await query(
-      `INSERT INTO users (username, passhash, email) VALUES (?,?,?)`,
+      `INSERT INTO user (username, password, email) VALUES (?,?,?)`,
       [username, password, email]
     )
     // set the session information on the client side, cookies

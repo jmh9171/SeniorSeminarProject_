@@ -28,6 +28,7 @@ export default function createUserForm() {
     async function submitHandler(e) {
         e.preventDefault()
         try {
+            console.log("Here")
             //fetches to the api for new user
             const res = await mutateUser(
                 fetchJson('/api/new-user', {
@@ -42,6 +43,13 @@ export default function createUserForm() {
                         password,
                     }),
                 }))
+
+            const setCook = await mutateUser(
+                fetchJson('/api/set-cookie', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                })
+            )
 
             // if the status code from the response is not 'OK' throw an unauthorized error
             if (response.status != 200) {
@@ -90,9 +98,9 @@ export default function createUserForm() {
                             value={password}
                             onChange={(e) => setPword(e.target.value)}
                         />
-                        
+
                         <center><button className={Styles.button} type="submit">Login</button></center>
-                        
+
                     </div>
                     <div className={Styles.container} style={{ backgroundColor: '#f1f1f1' }}></div>
                 </form>
@@ -134,8 +142,8 @@ export default function createUserForm() {
                             value={password}
                             onChange={(e) => setPword(e.target.value)}
                         />
-                       <center><button className={Styles.button} type="submit">Login</button></center>
-                       
+                        <center><button className={Styles.button} type="submit">Login</button></center>
+
                     </div>
                     <div className={Styles.container} style={{ backgroundColor: '#f1f1f1' }}></div>
                 </form>

@@ -3,11 +3,15 @@ import React from 'react';
 import { useState } from 'react';
 import useUser from '../../lib/useUser'
 
+import { useRouter } from 'next/router'
+
+import fetchJson from '../../lib/fetchJson'
 
 
 
-export default function Profileedit({ userID }) {
-  console.log(userID)
+
+export default function profileedit({ userID }) {
+  const router = useRouter()
   const { mutateUser } = useUser({
     // this is where the user goes after they create the cookie
     redirectTo: '/profile',
@@ -20,25 +24,24 @@ export default function Profileedit({ userID }) {
   const [description, setDescription] = useState('');
 
 
-  async function submitHandler(e) {
-
+  async function submitHandler2(e) {
+    e.preventDefault()
     console.log("Here")
     try {
+      const userData = await fetchJson('/api/set-profile', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          userID,
+          prefGame_1,
+          prefGame_2,
+          prefGame_3,
+          description,
+        }),
+      })
 
-      const user = await mutateUser(
-        fetchJson('/api/set-profile', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            userID,
-            prefGame_1,
-            prefGame_2,
-            prefGame_3,
-            description,
-          }),
-        })
-      )
 
+      
     } catch (e) {
       console.log(e.message)
     }
@@ -46,12 +49,11 @@ export default function Profileedit({ userID }) {
 
   return (
     <>
-
+      <center> <h3 style={{ color: "white" }}>Edit Profile Form</h3></center>
       <div className="container">
-        <form onSubmit={submitHandler}>
+        <form onSubmit={submitHandler2} action={()=> router.push('/profile')}>
 
-          <center> <h3 style={{ color: "white" }}>Edit Profile Form</h3></center>
-          <label htmlFor="pgame">Preferred Game #1</label>
+          <label htmlFor="pgame1">Preferred Game #1</label>
           <input
             type="text"
             id="p1"
@@ -59,8 +61,7 @@ export default function Profileedit({ userID }) {
             placeholder="Preferred game.."
             value={prefGame_1}
             onChange={(e) => setPrefGame_1(e.target.value)} />
-
-          <label htmlFor="pgame">Preferred Game #2</label>
+          <label htmlFor="pgame2">Preferred Game #2</label>
           <input
             type="text"
             id="p2" name="pg2"
@@ -68,7 +69,7 @@ export default function Profileedit({ userID }) {
             value={prefGame_2}
             onChange={(e) => setPrefGame_2(e.target.value)} />
 
-          <label htmlFor="pgame">Preferred Game #3</label>
+          <label htmlFor="pgame3">Preferred Game #3</label>
           <input
             type="text"
             id="p3"
@@ -86,18 +87,9 @@ export default function Profileedit({ userID }) {
             value={description}
             onChange={(e) => setDescription(e.target.value)} />
 
-          <label htmlFor="tag1">Tag</label>
-          <select id="tag1" name="tag1">
-            <option value="casual">CASUAL</option>
-            <option value="competitive">COMPETITIVE</option>
-          </select>
-
           <center><button type="submit">Submit</button></center>
 
         </form>
-
-
-
       </div>
 
       <style>{`
@@ -156,5 +148,3 @@ export default function Profileedit({ userID }) {
     </>
   )
 }
-
-export async function getServerSideProps({ req }) { }
