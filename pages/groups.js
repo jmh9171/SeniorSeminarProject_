@@ -24,7 +24,7 @@ return(
           <span className="w3-text-white" style={{fontSize: '90px'}}>My Groups<br /></span>
           <center> 
             
-  <div className="w3-middle-align" style={{maxWidth: '800px', maxHeight: '250px', overflow: 'hidden', overflow: 'auto'}}>
+  <div className="w3-middle-align" style={{maxWidth: '800px', maxHeight: '550px', overflow: 'hidden', overflow: 'auto'}}>
 
         
 
