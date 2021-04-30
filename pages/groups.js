@@ -28,7 +28,7 @@ return(
 
         
 
-        <Group/>
+        <Group avatarURL="/images/AboutTG.jpg"/>
         <Group/>
         <Group/>
         <Group/>

@@ -9,9 +9,9 @@ function Groupinfo(props){
 }
 
 
-const Group = () => (
+const Group = (props) => (
     <group>
-         <Groupinfo avatarURL="/images/minecraftLogo.png" groupname="Super cool MC Playgroup #1"/>
+         <Groupinfo avatarURL={props.avatarURL} groupname="Super cool MC Playgroup #1"/>
     </group>
 )
 
