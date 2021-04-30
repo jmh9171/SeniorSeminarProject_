@@ -4,26 +4,27 @@ import {
 
 const handler = async (req, res) => {
   const {
-    title,
-    content
+    groupName,
+    description
   } = req.body
   try {
-    if (!title || !content) {
+    if (!groupName) {
       return res
         .status(400)
         .json({
-          message: '`title` and `content` are both required'
+          message: 'groupName required'
         })
     }
 
     const results = await query(
       `
-      INSERT INTO entries (title, content)
+      INSERT INTO playgroup (name, description)
       VALUES (?, ?)
       `,
-      [title, content]
+      [groupName, description]
     )
-    return res.json(results)
+    return res.status(200)
+      .json(results)
   } catch (e) {
     res.status(500).json({
       message: e.message

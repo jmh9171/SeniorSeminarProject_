@@ -54,7 +54,7 @@ export default function about(props) {
             <div className="w3-twothird">
 
               <Introduction description={props.description} ></Introduction>
-              <Profileplaygroups></Profileplaygroups>
+              <Profileplaygroups userGroups={props.userGroups}></Profileplaygroups>
 
               {/* End Right Column */}
             </div>
@@ -101,14 +101,13 @@ export async function getServerSideProps({ req }) {
       props: { reroute: true }
     }
   }
-
-
   return {
     props: {
       userID: userData.userID,
       nameOfUser: userData.userInfo[0].username,
       description: userData.userInfo[0].description,
-      userGames: userData.userGames
+      userGames: userData.userGames,
+      userGroups: userData.userGroups
     }, // will be passed to the page component as props
   }
 }

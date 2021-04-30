@@ -54,7 +54,6 @@ const Mainprofile = (props) => (
 
           <hr />
           <p className="w3-large"><b><i className="fa fa-asterisk fa-fw w3-margin-right w3-text-dark-grey" />Preferred games</b></p>
-          {console.log("User Games: ", props.userGames.userGames)}
           {props.userGames.userGames.map(({ game }) => (
             <Preferredgame preferredgame={game} />
           ))}

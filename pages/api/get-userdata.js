@@ -8,6 +8,7 @@ import withSession from '../../lib/session'
  */
 export default withSession(async (req, res) => {
 
+
     if (!req.body.cook) {
         return res.status(200)
             .json({
@@ -16,6 +17,19 @@ export default withSession(async (req, res) => {
     }
 
     try {
+
+        if (req.body.groupData === true) {
+            const groupData = await query(
+                `SELECT name FROM playgroup WHERE 1`,
+                []
+            )
+            return res.status(200)
+                .json({
+                    groupData: {
+                        groupData
+                    }
+                })
+        }
 
         // get the id associated with the session
         const userID = await query(
@@ -41,6 +55,13 @@ export default withSession(async (req, res) => {
             [userID[0].id]
         )
 
+        const userGroups = await query(
+            `SELECT playgroup_name FROM member WHERE user_id = ?`,
+            [userID[0].id]
+        )
+
+
+
         return res.status(200)
 
             .json({
@@ -48,6 +69,9 @@ export default withSession(async (req, res) => {
                 userInfo: userInfo,
                 userGames: {
                     userGames
+                },
+                userGroups: {
+                    userGroups
                 }
             })
 

@@ -4,7 +4,7 @@ import fetcher from '../lib/fetchJson'
 
 
 
-export default function about() {
+export default function findgroups(props) {
   return (
     <div>
       <Head>
@@ -27,19 +27,10 @@ export default function about() {
         <span className="w3-text-white w3-display-container" style={{ fontSize: '100px', padding: '10px' }}>Find Groups<br /></span>
 
         <div className="w3-middle-align" style={{ maxWidth: '800px', maxHeight: '80%', overflow: 'hidden', overflow: 'auto', background: "rgba(46, 49, 49, 0.75)" }}>
-          <GroupFind />
-          <GroupFind />
-          <GroupFind />
-          <GroupFind />
-          <GroupFind />
-          <GroupFind />
-          <GroupFind />
-          <GroupFind />
-          <GroupFind />
-          <GroupFind />
-          <GroupFind />
-          <GroupFind />
-          <GroupFind />
+
+          {props.groupData.groupData.map(({ name }) => (
+            <GroupFind name={name} />
+          ))}
         </div>
       </div>
       <style jsx>{`
@@ -91,7 +82,6 @@ export default function about() {
                 Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
                 sans-serif;
             }
-    
             * {
               box-sizing: border-box;
             }
@@ -108,6 +98,7 @@ export async function getServerSideProps({ req }) {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       cook,
+      groupData: true
     }),
   })
 
@@ -120,10 +111,7 @@ export async function getServerSideProps({ req }) {
 
   return {
     props: {
-      userID: userData.userID,
-      nameOfUser: userData.userInfo[0].username,
-      description: userData.userInfo[0].description,
-      userGames: userData.userGames
+      groupData: userData.groupData
     }, // will be passed to the page component as props
   }
 }

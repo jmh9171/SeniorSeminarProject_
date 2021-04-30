@@ -3,59 +3,47 @@ import Group from '../components/group'
 import fetcher from '../lib/fetchJson'
 
 
-export default function about() {
-return(
+export default function groups(props) {
+  return (
     <div>
-    <Head>
+      <Head>
         <title>My groups</title>
         <link rel="icon" href="/favicon.ico" />
-    </Head>
+      </Head>
 
-<div>
+      <div>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata" />
-</div>
+      </div>
 
-        <center><img src="images/GroupsBG.jpg" style={{opacity: '0.9', width: '100%', maxHeight: '1200px'}} className="w3-margin-top" /></center>
-        <div className="w3-display-middle w3-center" style={{width: '50%', height: '85%'}}>
-          <span className="w3-text-white" style={{fontSize: '90px'}}>My Groups<br /></span>
-          <center> 
-            
-  <div className="w3-middle-align" style={{maxWidth: '800px', maxHeight: '250px', overflow: 'hidden', overflow: 'auto', background: "rgba(46, 49, 49, 0.75)"}}>
+      <center><img src="images/GroupsBG.jpg" style={{ opacity: '0.9', width: '100%', maxHeight: '1200px' }} className="w3-margin-top" /></center>
+      <div className="w3-display-middle w3-center" style={{ width: '50%', height: '85%' }}>
+        <span className="w3-text-white" style={{ fontSize: '90px' }}>My Groups<br /></span>
+        <center>
 
-        
+          <div className="w3-middle-align" style={{ maxWidth: '800px', maxHeight: '250px', overflow: 'hidden', overflow: 'auto', background: "rgba(46, 49, 49, 0.75)" }}>
 
-        <Group/>
-        <Group/>
-        <Group/>
-        <Group/>
-        <Group/>
-        <Group/>
-        <Group/>
-        <Group/>
-        <Group/>
-        <Group/>
-        <Group/>
-        <Group/>
+            {props.userGroups.userGroups.map(({ playgroup_name }) => (
+              <Group group={playgroup_name} />
+            ))
+            }
+          </div>
+        </center>
 
-        
-  </div>
-</center> 
-
-<p style={{fontSize: "50px", color: "white"}}><a href="/creategroup">Create Group</a></p>
+        <p style={{ fontSize: "50px", color: "white" }}><a href="/creategroup">Create Group</a></p>
 
 
 
-        </div>
+      </div>
 
 
 
 
 
 
-    <style jsx global>{`
+      <style jsx global>{`
         html,
         body {
           padding: 0;
@@ -71,7 +59,7 @@ return(
       `}</style>
 
     </div>
-);
+  );
 }
 
 export async function getServerSideProps({ req }) {
@@ -91,13 +79,12 @@ export async function getServerSideProps({ req }) {
     }
   }
 
-
   return {
     props: {
       userID: userData.userID,
       nameOfUser: userData.userInfo[0].username,
-      description: userData.userInfo[0].description,
-      userGames: userData.userGames
+      userGames: userData.userGames,
+      userGroups: userData.userGroups
     }, // will be passed to the page component as props
   }
 }

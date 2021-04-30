@@ -1,37 +1,70 @@
 
 import React from 'react';
+import fetchJson from '../../lib/fetchJson'
+import { useState } from 'react';
+
+
+export default function Creategroupform() {
+
+  const [groupName, setGroupName] = useState('');
+  const [description, setDescription] = useState('');
+
+  async function submitHandler(e) {
+    e.preventDefault()
+
+    const createGroup = await fetchJson('/api/create-group', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        groupName,
+        description
+      }),
+    })
+
+  }
 
 
 
-
-const Creategroupform = () => (
+  return (
     <creategroupform>
-   
-   <div>
-        <h3 style={{color: "white"}}>Create Group Form</h3>
+
+      <div>
+        <h3 style={{ color: "white" }}>Create Group Form</h3>
         <div className="container">
-          <form>
+          <form onSubmit={submitHandler}>
             <label htmlFor="gname">Group Name</label>
-            <input type="text" id="gname" name="groupname" placeholder="Group name.." />
+            <input
+              type="text"
+              id="gname"
+              name="groupname"
+              placeholder="Group name.."
+              value={groupName}
+              onChange={(e) => setGroupName(e.target.value)} />
 
 
             <label htmlFor="tag1">Tag</label>
-        <select id="tag1" name="tag1">
-            <option value="casual">CASUAL</option>
-            <option value="competitive">COMPETITIVE</option>
-        </select>
+            <select id="tag1" name="tag1">
+              <option value="casual">CASUAL</option>
+              <option value="competitive">COMPETITIVE</option>
+            </select>
 
             <label htmlFor="subject">Description</label>
-            <textarea id="description" name="description" placeholder="Write something about your group.." style={{height: '200px'}} defaultValue={""} />
-            <input type="submit" defaultValue="Submit" style={{color: "white"}}/>
+            <textarea
+              id="description"
+              name="description"
+              placeholder="Write something about your group.."
+              style={{ height: '200px' }}
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}  />
+            <input type="submit" defaultValue="Submit" style={{ color: "white" }} />
           </form>
 
         </div>
-</div>
+      </div>
 
 
 
-<style>{`
+      <style>{`
        body {font-family: Arial, Helvetica, sans-serif;}
        * {box-sizing: border-box;}
        
@@ -68,7 +101,7 @@ const Creategroupform = () => (
       `}</style>
 
 
-    <style jsx global>{`
+      <style jsx global>{`
         html,
         body {
           padding: 0;
@@ -82,9 +115,9 @@ const Creategroupform = () => (
           box-sizing: border-box;
         }
       `}</style>
-  
+
 
     </creategroupform>
-)
+  )
+}
 
-export default Creategroupform

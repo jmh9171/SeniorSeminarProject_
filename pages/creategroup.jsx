@@ -1,9 +1,8 @@
 import Head from 'next/head'
-import Group from '../components/group'
 import Creategroupform from '../components/creategroup'
+import fetcher from '../lib/fetchJson'
 
-
-export default function about() {
+export default function creategroup() {
     return (
         <div>
             <Head>
@@ -26,7 +25,6 @@ export default function about() {
                 <Creategroupform />
 
             </div>
-
         </div>
     );
 }
@@ -56,5 +54,3 @@ export async function getServerSideProps({ req }) {
         }, // will be passed to the page component as props
     }
 }
-
-ß
