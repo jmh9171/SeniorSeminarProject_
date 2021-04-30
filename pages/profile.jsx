@@ -6,7 +6,6 @@ import { useRouter } from 'next/router'
 import Event from '../components/event'
 import React from 'react';
 import fetcher from '../lib/fetchJson'
-import { useEffect } from 'react'
 
 
 

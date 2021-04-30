@@ -2,7 +2,9 @@ import {
   query
 } from '../../lib/db'
 
+
 const handler = async (req, res) => {
+  const router = useRouter()
   const rawCookie = req.headers.cookie
   const cookie = rawCookie.substring(8, rawCookie.length)
   const group = req.body.groupname
@@ -20,11 +22,13 @@ const handler = async (req, res) => {
       [userID[0].id, group]
     )
 
-    
+    return res.status(200).json({
+      member
+    })
 
 
   } catch (e) {
-    res.status(500)
+    return res.status(500)
       .json({
         message: e.message
       })
