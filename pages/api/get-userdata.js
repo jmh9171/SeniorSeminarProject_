@@ -8,17 +8,24 @@ import withSession from '../../lib/session'
  */
 export default withSession(async (req, res) => {
 
+    if (!req.body.cook) {
+        return res.status(200)
+            .json({
+                message: 'no session available'
+            })
+    }
+
     try {
+
         // get the id associated with the session
         const userID = await query(
             `SELECT id FROM userSession WHERE sesh = ?`,
             [req.body.cook]
         )
-        // if there isnt one then return bad status code
 
         if (!userID[0]) {
-            console.log("USER ID: ", userID)
-            return res.status(401)
+            console.log("get-userdata API")
+            return res.status(200)
                 .json({
                     message: 'no session available'
                 })
@@ -34,11 +41,6 @@ export default withSession(async (req, res) => {
             [userID[0].id]
         )
 
-
-
-
-        
-        // else, return a status 400 response, indicating no match
         return res.status(200)
 
             .json({

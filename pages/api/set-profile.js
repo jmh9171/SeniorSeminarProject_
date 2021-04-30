@@ -7,10 +7,7 @@ import withSession from '../../lib/session'
  * @param  {} res - response
  */
 export default withSession(async (req, res) => {
-    console.log("Here inside set-profile")
-    console.log(req.body)
     try {
-
         const {
             userID,
             prefGame_1,
@@ -18,9 +15,6 @@ export default withSession(async (req, res) => {
             prefGame_3,
             description
         } = req.body
-
-
-
 
         const game_1 = await query(
             `INSERT INTO userGames (id, game) VALUES (?,?)`,
@@ -33,6 +27,7 @@ export default withSession(async (req, res) => {
                 [userID, prefGame_2]
             )
         }
+
         if (prefGame_3) {
             const game_3 = await query(
                 `INSERT INTO userGames (id, game) VALUES (?,?)`,
@@ -47,7 +42,6 @@ export default withSession(async (req, res) => {
                 [description, userID]
             )
         }
-
 
     } catch (e) {
         console.log(e.message)

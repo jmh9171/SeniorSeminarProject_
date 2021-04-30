@@ -1,6 +1,4 @@
 import Head from 'next/head'
-import Header from '../components/header'
-import Footer from '../components/footer'
 import Group from '../components/group'
 import Creategroupform from '../components/creategroup'
 
@@ -12,7 +10,7 @@ export default function about() {
                 <title>My groups</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <Header />
+
             <div>
                 <meta charSet="UTF-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -28,7 +26,35 @@ export default function about() {
                 <Creategroupform />
 
             </div>
-            <Footer />
+
         </div>
     );
 }
+
+export async function getServerSideProps({ req }) {
+
+    const cook = req.cookies.session
+    const userData = await fetcher('http://localhost:3000/api/get-userdata', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            cook,
+        }),
+    })
+
+    if (userData.message === 'no session available') {
+        return {
+            props: { reroute: true }
+        }
+    }
+    return {
+        props: {
+            userID: userData.userID,
+            nameOfUser: userData.userInfo[0].username,
+            description: userData.userInfo[0].description,
+            userGames: userData.userGames
+        }, // will be passed to the page component as props
+    }
+}
+
+ß

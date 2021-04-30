@@ -26,7 +26,6 @@ export default function profileedit({ userID }) {
 
   async function submitHandler2(e) {
     e.preventDefault()
-    console.log("Here")
     try {
       const userData = await fetchJson('/api/set-profile', {
         method: 'POST',
@@ -41,7 +40,7 @@ export default function profileedit({ userID }) {
       })
 
 
-      
+
     } catch (e) {
       console.log(e.message)
     }
@@ -51,7 +50,7 @@ export default function profileedit({ userID }) {
     <>
       <center> <h3 style={{ color: "white" }}>Edit Profile Form</h3></center>
       <div className="container">
-        <form onSubmit={submitHandler2} action={()=> router.push('/profile')}>
+        <form onSubmit={submitHandler2} action={() => router.push('/profile')}>
 
           <label htmlFor="pgame1">Preferred Game #1</label>
           <input

@@ -63,8 +63,8 @@ export default function Header() {
 
           </li>
           <li className={Styles.header1}>
-            <Link href="/feed">
-              <a>Feed</a>
+            <Link href="/findgroups">
+              <a>Find Groups</a>
             </Link>
           </li>
           <li className={Styles.header1}>

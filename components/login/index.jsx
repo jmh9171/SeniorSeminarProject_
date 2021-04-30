@@ -55,7 +55,6 @@ export default function EntryForm(props) {
           }),
         })
       )
-      //console.log("Login index.js, user: ", user);
 
       const setCook = await mutateUser(
         fetchJson('/api/set-cookie', {
