@@ -22,7 +22,7 @@ export default function profileedit({ userID }) {
   const [prefGame_2, setPrefGame_2] = useState('');
   const [prefGame_3, setPrefGame_3] = useState('');
   const [description, setDescription] = useState('');
-
+  const { route, setRoute } = useState(false);
 
   async function submitHandler2(e) {
     e.preventDefault()
@@ -40,7 +40,7 @@ export default function profileedit({ userID }) {
       })
 
 
-
+      router.push('/profile')
     } catch (e) {
       console.log(e.message)
     }
@@ -86,7 +86,7 @@ export default function profileedit({ userID }) {
             value={description}
             onChange={(e) => setDescription(e.target.value)} />
 
-          <center><button type="submit">Submit</button></center>
+          <center><button type="submit" onChange={(e) => setRoute(true)}>Submit</button></center>
 
         </form>
       </div>

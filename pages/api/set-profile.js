@@ -16,10 +16,12 @@ export default withSession(async (req, res) => {
             description
         } = req.body
 
-        const game_1 = await query(
-            `INSERT INTO userGames (id, game) VALUES (?,?)`,
-            [userID, prefGame_1]
-        )
+        if (prefGame_2) {
+            const game_1 = await query(
+                `INSERT INTO userGames (id, game) VALUES (?,?)`,
+                [userID, prefGame_1]
+            )
+        }
 
         if (prefGame_2) {
             const game_2 = await query(
@@ -42,6 +44,11 @@ export default withSession(async (req, res) => {
                 [description, userID]
             )
         }
+
+        return res.status(200)
+            .json({
+                message: "OK"
+            })
 
     } catch (e) {
         console.log(e.message)

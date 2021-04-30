@@ -2,25 +2,35 @@
 import React from 'react';
 import fetchJson from '../../lib/fetchJson'
 import { useState } from 'react';
+import { useRouter } from 'next/router'
+import { useEffect } from 'react'
 
 
 export default function Creategroupform() {
 
   const [groupName, setGroupName] = useState('');
   const [description, setDescription] = useState('');
+  const { route, setRoute } = useState(false);
+  const router = useRouter()
+
+
 
   async function submitHandler(e) {
     e.preventDefault()
+    try {
+      const createGroup = await fetchJson('/api/create-group', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          groupName,
+          description
+        }),
+      })
 
-    const createGroup = await fetchJson('/api/create-group', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        groupName,
-        description
-      }),
-    })
-
+      router.push('/profile')
+    } catch (e) {
+      console.log("GroupFind index: ", e.message)
+    }
   }
 
 
@@ -55,8 +65,11 @@ export default function Creategroupform() {
               placeholder="Write something about your group.."
               style={{ height: '200px' }}
               value={description}
-              onChange={(e) => setDescription(e.target.value)}  />
-            <input type="submit" defaultValue="Submit" style={{ color: "white" }} />
+              onChange={(e) => setDescription(e.target.value)} />
+            <button
+              type="submit"
+              onChange={(e) => setRoute(true)}>Submit
+              </button>
           </form>
 
         </div>
@@ -86,6 +99,15 @@ export default function Creategroupform() {
          border: none;
          border-radius: 4px;
          cursor: pointer;
+       }
+
+       button{
+        background-color: #4c9aaf;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
        }
        
        input[type=submit]:hover {

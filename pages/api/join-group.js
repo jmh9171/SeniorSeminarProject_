@@ -4,7 +4,6 @@ import {
 
 
 const handler = async (req, res) => {
-  const router = useRouter()
   const rawCookie = req.headers.cookie
   const cookie = rawCookie.substring(8, rawCookie.length)
   const group = req.body.groupname
@@ -28,6 +27,7 @@ const handler = async (req, res) => {
 
 
   } catch (e) {
+    console.log("Join-groups API: ", e.message)
     return res.status(500)
       .json({
         message: e.message
