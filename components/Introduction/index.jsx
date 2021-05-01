@@ -52,7 +52,7 @@ function Aboutme(props){
   return (
     
     <p>
-      <EditArea aboutdesc="Please write something about yourself..">{props.aboutme}</EditArea>
+      Please write something about yourself..
     </p>
   );
 }
